@@ -1,0 +1,27 @@
+{
+  "Header": {
+    "title": "EU digital check"
+  },
+  "EuResultsComp": {
+    "overview": "Dimension Overview",
+    "dimension1": "Digital Strategy and Investment",
+    "dimension2": "Readiness for Digital Transformation",
+    "dimension3": "People-Centric Digitalization",
+    "dimension4": "Data Management and Security",
+    "dimension5": "Interoperability",
+    "dimension6": "Green Digitalization"
+  },
+  "Results": {
+    "text": "For an EU-wide benchmark and further co-operation with EDIH Thuringia, please send us your results and we will get in touch with you.",
+    "button": "Send"
+  },
+  "Labels": {
+    "l0": "Results",
+    "l1": "Digital Strategy and Investments",
+    "l2": "Readiness for Digital Transformation",
+    "l3": "People-Centric Digitalization",
+    "l4": "Data Management and Security",
+    "l5": "Interoperability",
+    "l6": "Green Digitalization"
+  }
+}

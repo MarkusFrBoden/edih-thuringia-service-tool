@@ -1,0 +1,327 @@
+/* Background */
+body,
+header {
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 75vh;
+}
+
+.dark body,
+.dark header {
+  background: rgb(43, 48, 63);
+}
+
+/* Fonts */
+h1 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(16px, 4vw, 32px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(28, 67, 126);
+}
+
+.dark h1 {
+  color: rgb(255, 255, 255);
+}
+
+h5 {
+  color: rgb(28, 67, 126);
+}
+
+.dark h5 {
+  color: rgb(255, 255, 255);
+}
+
+/* Buttons */
+button,
+select {
+  color: rgb(28, 67, 126);
+  border-color: rgb(28, 67, 126);
+}
+
+.dark button,
+.dark select {
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+}
+
+/* Boxes (for results) */
+.content {
+  text-align: center;
+  margin: 20px;
+}
+
+.box {
+  margin: 0 10px;
+  width: calc(100% - 20px);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #eceaea;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  /* Gleiche Höhe für beide Boxen */
+}
+
+.dark .box,
+.dark .leftbox,
+.dark .rightbox {
+  background: #020b3d;
+  color: white;
+}
+
+/* Header positions */
+header .container {
+  height: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+header .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+header .col1 {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+header .col2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .col3 {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+header #img img {
+  max-width: 100%;
+  height: auto;
+  min-height: 50px;
+  min-width: 205px;
+}
+
+header .btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-select {
+  height: 100%;
+  padding: 0.375rem 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Celebration Animation */
+.overlay {
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confetti-container {
+  user-select: none;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.confetti .square {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--bg);
+  transform: rotate(-140deg);
+}
+
+.confetti .rectangle {
+  width: 1rem;
+  height: 0.5rem;
+  background-color: var(--bg);
+}
+
+.confetti .hexagram {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1rem solid var(--bg);
+  position: relative;
+}
+
+.confetti .hexagram:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid var(--bg);
+  position: absolute;
+  top: 0.33rem;
+  left: -0.5rem;
+}
+
+.confetti .pentagram {
+  width: 0rem;
+  height: 0rem;
+  display: block;
+  margin: 0.5rem 0;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(35deg);
+  position: relative;
+}
+
+.confetti .pentagram:before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-bottom: 0.8rem solid var(--bg);
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  transform: rotate(-35deg);
+  position: absolute;
+  top: -0.45rem;
+  left: -0.65rem;
+}
+
+.confetti .pentagram:after {
+  content: "";
+  width: 0rem;
+  height: 0rem;
+  display: block;
+  border-right: 1rem solid transparent;
+  border-bottom: 0.7rem solid var(--bg);
+  border-left: 1rem solid transparent;
+  transform: rotate(-70deg);
+  position: absolute;
+  top: 0.03rem;
+  left: -1.05rem;
+}
+
+.confetti .dodecagram {
+  background: var(--bg);
+  width: 0.8rem;
+  height: 0.8rem;
+  position: relative;
+}
+
+.confetti .dodecagram:before {
+  content: "";
+  height: 0.8rem;
+  width: 0.8rem;
+  background: var(--bg);
+  transform: rotate(30deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.confetti .dodecagram:after {
+  content: "";
+  height: 0.8rem;
+  width: 0.8rem;
+  background: var(--bg);
+  transform: rotate(60deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.confetti .wavy-line {
+  position: relative;
+}
+
+.confetti .wavy-line::after,
+.confetti .wavy-line::before {
+  content: "";
+  height: 1rem;
+  width: 8rem;
+  background-size: 2rem 1rem;
+  position: absolute;
+  left: -9rem;
+  transform: rotate(90deg);
+}
+
+.confetti .wavy-line::before {
+  background-image: linear-gradient(45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%);
+  top: 1rem;
+}
+
+.confetti .wavy-line::after {
+  background-image: linear-gradient(-45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%);
+}
+
+.confetti i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+  animation-name: confetti;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(70s / var(--speed));
+}
+
+.confetti i:nth-child(even) {
+  transform: rotate(90deg);
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+input:checked+.confetti-container i {
+  animation-play-state: paused;
+}

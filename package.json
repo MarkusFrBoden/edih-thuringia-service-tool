@@ -1,0 +1,28 @@
+{
+  "name": "dma-vite-tool",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@vueuse/core": "^11.0.3",
+    "chart.js": "^4.4.4",
+    "dotenv": "^16.4.5",
+    "survey-vue3-ui": "^1.11.13",
+    "vue": "^3.4.37",
+    "vue-chartjs": "^5.3.1",
+    "vue-i18n": "^9.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.0.29"
+  }
+}
