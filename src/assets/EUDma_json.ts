@@ -517,8 +517,8 @@ export const EUDmaJSON = {
               "type": "image",
               "name": "Digital Maturity Assessment Framework for Public Sector Organisations (PSOs)",
               "imageLink": {
-                "de": "./src/assets/DE-EU-DMA-PSO-M2.png",
-                "en": "./src/assets/EN-EU-DMA-PSO-M2.png"
+                "de": "/DE-EU-DMA-PSO-M2.png",
+                "en": "/EN-EU-DMA-PSO-M2.png"
               },
               "altText": "Source: EC JRC own elaboration",
               "imageHeight": 330,
@@ -2210,8 +2210,8 @@ export const EUDmaJSON = {
               "type": "image",
               "name": "Digital Maturity Assessment Framework for Small- and Middlesized Enterprises (SME)",
               "imageLink": {
-                "de": "./src/assets/DE-EU-DMA-SME-M2.png",
-                "en": "./src/assets/EN-EU-DMA-SME-M2.png"
+                "de": "/DE-EU-DMA-SME-M2.png",
+                "en": "/EN-EU-DMA-SME-M2.png"
               },
               "altText": "Source: EC JRC own elaboration",
               "imageHeight": 330,
