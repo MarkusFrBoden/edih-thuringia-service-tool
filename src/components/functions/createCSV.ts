@@ -327,8 +327,71 @@ export function createCSV(Answers: Ref<any>) {
     csvContent += "\n";
 
     // send results to the EDIH for EU-Upload
+    let PSOtypes = [
+        "National authority",
+        "Regional authority",
+        "Province/municipal authority",
+        "Other"
+      ];
+    let PSOsize = [
+        "Small-size (0-49)",
+        "Medium-size (50-249)",
+        "Large-size (250 or more)"
+      ];
+    let PSOsectors = [
+        "General public services",
+        "Defence",
+        "Public order and safety",
+        "Economic affairs",
+        "Environmental protection",
+        "Housing and community amenities",
+        "Health",
+        "Recreation, culture and religion",
+        "Education",
+        "Social protection"
+      ];
+    let SMEsize = [
+        "Micro-size (1-9)",
+        "Small-size (10-49)",
+        "Medium-size (50-249)",
+        "Large-size (250 or more)"
+      ];
+    let SMEsectors = [
+        "Aeronautics & Space",
+        "Agriculture and food",
+        "Community, social and personal service activities",
+        "Construction",
+        "Consumer goods/products",
+        "Culture and Creative industries",
+        "Defence and security",
+        "Education",
+        "Energy and utilities",
+        "Environment",
+        "Financial services",
+        "Life sciences & healthcare",
+        "Manufacturing",
+        "Maritime and fishery",
+        "Mining and quarrying",
+        "Mobility (incl. Automotive)",
+        "Public administration",
+        "Real estate, renting and business activities",
+        "Professional, Scientific and Technical Activities",
+        "Telecommunications, Information and Communication",
+        "Tourism (incl. restaurants and hospitality)",
+        "Wholesale and retail",
+        "Legal Aspects",
+        "Regulation"
+      ];
+
+
     let sendEDIHEmail = () => {
         const base64CSV = btoa(csvContent);
+        let KPI_String = ""
+        if(prefix === "EUPSO"){
+            KPI_String = header.EUPSOQuestion2+";"+header.EUPSOQuestion3+";"+""+";"+header.EUPSOQuestion4+";"+header.EUPSOQuestion5+";"+header.EUPSOQuestion6+";"+header.EUPSOQuestion7+";"+header.EUPSOQuestion8+";"+PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)]+";"+PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)]+";"+header.EUPSOQuestion11.text4+";"+header.EUPSOQuestion11.text3+";"+header.EUPSOQuestion11.text1+", "+header.EUPSOQuestion11.text2+", "+header.EUPSOQuestion11.text3+";"+PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)]+";"+PSOsectors[parseInt(header.EUPSOQuestion14.slice(5).trim(), 10)]
+        }else{
+            KPI_String = header.EUSMEQuestion2+";"+""+";"+header.EUSMEQuestion3+";"+""+";"+header.EUSMEQuestion4+";"+header.EUSMEQuestion5+";"+header.EUSMEQuestion6+";"+header.EUSMEQuestion7+";"+header.EUSMEQuestion8+";"+SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)]+";"+header.EUSMEQuestion9+";"+header.EUSMEQuestion11.text4+";"+header.EUSMEQuestion11.text3+";"+header.EUSMEQuestion11.text1+", "+header.EUSMEQuestion11.text2+", "+header.EUSMEQuestion11.text3+";"+SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)]+";"+SMEsectors[parseInt(header.EUSMEQuestion14.slice(5).trim(), 10)]
+        }
 
         const templateParams1 = {
             customer_name: header[`${prefix}Question2`],
@@ -336,6 +399,7 @@ export function createCSV(Answers: Ref<any>) {
             customer_contact: header[`${prefix}Question4`],
             customer_mail: header[`${prefix}Question6`],
             dma_date: header[`${prefix}Question1`],
+            KPI_reporting: KPI_String,
             dma_results: base64CSV,
             filename: header[`${prefix}Question1`] + '_EDIH-TH_DMA_' + header[`${prefix}Question2`]
         };

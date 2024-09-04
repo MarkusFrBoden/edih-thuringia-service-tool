@@ -2,19 +2,25 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col mb-4">
-                    <div class="box position-relative">
-                        <b>{{ $t(filename + '.overview') }}</b>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <span class="position-absolute"
-                                style="top: 50%; left: calc(15%); transform: translate(-50%, -50%); font-size: 50px; color: #41B883;">
-                                Ø {{ props.EuResults.dimG.toFixed(2) }}
-                            </span>
-                        </div>
-                        <radarChart :data="props.radarChartDataValues" />
+    <div class="col mb-4">
+        <div class="box position-relative">
+            <div class="row">
+                <b>{{ $t(filename + '.overview') }}</b>
+                <div class="col-sm-4">
+                    <div class="text-overlay">
+                        
+                        <span class="position-relative" style="font-size: 50px; color: #41B883;">
+                            Ø {{ props.EuResults.dimG.toFixed(2) }}
+                        </span>
                     </div>
                 </div>
+                <div class="col">
+                    <radarChart :data="props.radarChartDataValues" />
+                </div>
             </div>
+        </div>
+    </div>
+</div>
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="box">
