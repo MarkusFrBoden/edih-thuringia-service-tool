@@ -13,6 +13,23 @@ export const EUDmaJSON = {
       "name": "EUDMAPage1",
       "elements": [
         {
+          "type": "html",
+          "name": "rendered-html",
+          "html": {
+            "de": "<p>Im Rahmen der EDIH-Initiative der Europäischen Union wurde jeweils ein digitales Reifegradmodell mit Fragen für kleine und mittlere Unternehmen (SME) und öffentliche Organisationen (PSO) erarbeitet. Die Modelle ermöglichen die Durchführung von digitalen Reifegraderfassungen (DMA) zu den drei Zeitpunkten T0 - vor dem EDIH-Service, T1 - während des EDIH-Services und T2 - nach dem EDIH-Service. <b>Mit den Digitalchecks verfolgt die EU folgende Ziele:</b></p><ol><li>Die Bewertung des aktuellen Stands der digitalen Reife der Unternehmen/Organisationen für die Ermittlung der erforderlichen EDIH-Digitalisierungsdienste.</li><li>Ein Benchmarking für Unternehmen/Organisationen, um ein besseres Bild der digitalen Reife im Vergleich zu Wettbewerbern zu erhalten.</li><li>Die Messung und Berichterstattung über die Wirksamkeit der EDIH-Dienste.</li><li>Die Bereitstellung von Feedback für politische Entscheidungen und erforderliche Korrekturmaßnahmen.</li></ol><p>Dieser Online-Check bietet Ihnen die Möglichkeit Ihren digitalen Reifegrad selbst zu bestimmen. <b>Ihre Daten werden standardmäßig nicht gespeichert oder weiterverarbeitet.</b> Wenn Sie an einem EU-weiten Benchmark Ihres Reifegrades erhalten wollen und an der weiteren Zusammenarbeit mit dem EDIH Thuringa interessiert sind, haben Sie <b>die Möglichkeit, uns Ihre Ergebnisse im Anschluss an die Bewertung zuzusenden.</b></p>",
+            "en": "<p>As part of the EDIH initiative of the European Union, a digital maturity model with questions for small and medium-sized enterprises (SME) and public sector organizations (PSO) was developed. The models enable the implementation of digital maturity assessments (Digital Checks). <b>The EU aims to achieve the following objectives with the Digital Checks:</b></p><ol><li>The evaluation of the current state of digital maturity of enterprises/organizations to determine the necessary EDIH digitalization services.</li><li>A benchmarking for enterprises/organizations to get a better understanding of their digital maturity in comparison to competitors.</li><li>The measurement and reporting on the effectiveness of EDIH services.</li><li>The provision of feedback for political decisions and necessary corrective actions.</li></ol><p>This online check offers you the opportunity to assess your own digital maturity level. <b>Your data will not be stored or processed by default.</b> If you are interested in receiving an EU-wide benchmark of your maturity level and in further collaboration with EDIH Thuringia, you will have <b>the opportunity to send us your results after the assessment.</b></p>"
+          },
+          "startWithNewLine": false
+        },
+        {
+          "type": "image",
+          "name": "Digital Maturity Assessment Framework for Public Sector Organisations (PSOs)",
+          "imageLink": "/EDIH_DMA_Badges.png",
+          "altText": "EDIH Badges",
+          "imageHeight": 180,
+          "imageWidth": 800
+        },
+        {
           "type": "radiogroup",
           "name": "EUDMAQuestion1",
           "title": {
