@@ -90,6 +90,27 @@ export function createCSV(Answers: Ref<any>) {
             return 0;
         }
     };
+
+    //function for readiogrop with 3 answers
+    const questionCalc4 = (question: any, row: any) => {
+        if (question.hasOwnProperty(row)) {
+            const item = question[row];
+            switch (item) {
+                case "Column 1":
+                    return 0;
+                case "Column 2":
+                    return 10;
+                case "Column 3":
+                    return 20;
+                default:
+                    return 0;
+            }
+        } else {
+            return 0;
+        }
+    };
+
+
     let jsonData: any = {};
     if (header.EUDMAQuestion1 === "PSO") {
         jsonData = {
@@ -306,11 +327,11 @@ export function createCSV(Answers: Ref<any>) {
             paperless_administrative_processes_m2_6_10: header.EUSMEQuestion24?.includes('Item 10') ? 1 : 0,
 
             //question EUSMEQuestion25
-            green_digitalisation_2_likert__environmental_concerns_m2_6_11: questionCalc3(header.EUSMEQuestion25, 'Row 1'),
-            green_digitalisation_2_likert__environmental_management_m2_6_11: questionCalc3(header.EUSMEQuestion25, 'Row 2'),
-            green_digitalisation_2_likert__environmental_aspects_m2_6_11: questionCalc3(header.EUSMEQuestion25, 'Row 3'),
-            green_digitalisation_2_likert__energy_consumption_m2_6_11: questionCalc3(header.EUSMEQuestion25, 'Row 4'),
-            green_digitalisation_2_likert__recycling_reuse_m2_6_11: questionCalc3(header.EUSMEQuestion25, 'Row 5'),
+            green_digitalisation_2_likert__environmental_concerns_m2_6_11: questionCalc4(header.EUSMEQuestion25, 'Row 1'),
+            green_digitalisation_2_likert__environmental_management_m2_6_11: questionCalc4(header.EUSMEQuestion25, 'Row 2'),
+            green_digitalisation_2_likert__environmental_aspects_m2_6_11: questionCalc4(header.EUSMEQuestion25, 'Row 3'),
+            green_digitalisation_2_likert__energy_consumption_m2_6_11: questionCalc4(header.EUSMEQuestion25, 'Row 4'),
+            green_digitalisation_2_likert__recycling_reuse_m2_6_11: questionCalc4(header.EUSMEQuestion25, 'Row 5'),
         };
     }
 
@@ -321,7 +342,7 @@ export function createCSV(Answers: Ref<any>) {
     let csvContent = headers.join(",") + "\n";
     headers.forEach((header: string) => {
         const value = jsonData[header] !== null && jsonData[header] !== undefined ? jsonData[header].toString().replace(/"/g, '""') : "";
-        csvContent += `"${value}",`;
+        csvContent += `${value},`;
     });
     csvContent = csvContent.slice(0, -1);
     csvContent += "\n";
