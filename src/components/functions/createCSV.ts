@@ -44,6 +44,8 @@ export function createCSV(Answers: Ref<any>) {
             } else {
                 return '0|0';
             }
+        }else{
+            return '0|0';
         }
     }
 
@@ -130,14 +132,14 @@ export function createCSV(Answers: Ref<any>) {
             citizens_and_other_stakeholders_m2_1_1: header.EUPSOQuestion15?.includes('Item 9') ? 1 : 0,
             risks_of_digitalisation_m2_1_1: header.EUPSOQuestion15?.includes('Item 10') ? 1 : 0,
             //question EUPSOQuestion16
-            internal_operations_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 1'),
-            external_operations_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 2'),
-            policy_making_policy_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 3'),
-            provision_of_public_services_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 4'),
-            financial_administration_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 5'),
-            human_resources_management_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 6'),
-            purchasing_and_public_procurement_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 7'),
-            project_planning_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 8'),
+            internal_operations_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 1') || '0|0',
+            external_operations_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 2')|| '0|0',
+            policy_making_policy_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 3')|| '0|0',
+            provision_of_public_services_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 4')|| '0|0',
+            financial_administration_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 5')|| '0|0',
+            human_resources_management_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 6')|| '0|0',
+            purchasing_and_public_procurement_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 7')|| '0|0',
+            project_planning_m2_1_2: questionCalc1(header.EUPSOQuestion16, 'Row 8')|| '0|0',
             //question EUPSOQuestion17
             connectivity_infrastructure_m2_2_3: header.EUPSOQuestion17?.includes('Item 1') ? 1 : 0,
             website_m2_2_3: header.EUPSOQuestion17?.includes('Item 2') ? 1 : 0,
@@ -194,22 +196,22 @@ export function createCSV(Answers: Ref<any>) {
             full_backup_copy_of_critical_business_data_m2_4_8: header.EUPSOQuestion22?.includes('Item 5') ? 1 : 0,
             business_continuity_plan_m2_4_8: header.EUPSOQuestion22?.includes('Item 6') ? 1 : 0,
             //question EUPSOQuestion23
-            publish_data_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 1'),
-            ensure_level_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 2'),
-            give_preference_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 3'),
-            ensure_internal_visibility_m2_9_5: questionCalc1(header.EUPSOQuestion23, 'Row 4'),
-            reuse_and_share_m2_9_5: questionCalc1(header.EUPSOQuestion23, 'Row 5'),
-            impose_any_technology_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 6'),
-            ensure_data_portability_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 7'),
-            give_end_users_options_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 8'),
-            provide_single_point_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 9'),
-            ask_users_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 10'),
-            persons_with_disabilities_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 11'),
-            services_available_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 12'),
-            ensure_data_exchange_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 13'),
-            give_priority_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 14'),
-            data_storage_formats_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 15'),
-            digital_solutions_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 16'),
+            publish_data_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 1') || '0|0',
+            ensure_level_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 2')|| '0|0',
+            give_preference_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 3')|| '0|0',
+            ensure_internal_visibility_m2_9_5: questionCalc1(header.EUPSOQuestion23, 'Row 4')|| '0|0',
+            reuse_and_share_m2_9_5: questionCalc1(header.EUPSOQuestion23, 'Row 5')|| '0|0',
+            impose_any_technology_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 6')|| '0|0',
+            ensure_data_portability_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 7')|| '0|0',
+            give_end_users_options_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 8')|| '0|0',
+            provide_single_point_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 9')|| '0|0',
+            ask_users_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 10')|| '0|0',
+            persons_with_disabilities_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 11')|| '0|0',
+            services_available_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 12')|| '0|0',
+            ensure_data_exchange_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 13')|| '0|0',
+            give_priority_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 14')|| '0|0',
+            data_storage_formats_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 15')|| '0|0',
+            digital_solutions_m2_5_9: questionCalc1(header.EUPSOQuestion23, 'Row 16')|| '0|0',
             //question EUPSOQuestion24
             sustainable_organisational_model_m2_6_10: header.EUPSOQuestion24?.includes('Item 1') ? 1 : 0,
             sustainable_service_provision_m2_6_10: header.EUPSOQuestion24?.includes('Item 2') ? 1 : 0,
@@ -235,16 +237,16 @@ export function createCSV(Answers: Ref<any>) {
             enterprise_name_edih: header.EUSMEQuestion2,
             fiscal_registration_number_vat: header.EUSMEQuestion3,
             //question EUSMEQuestion15 
-            product_service_design_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 1'),
-            project_planning_and_management_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 2'),
-            operations_production_of_physical_goods_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 3'),
-            collaboration_with_other_companies_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 4'),
-            inbound_logistics_warehousing_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 5'),
-            marketing_sales_customer_management_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 6'),
-            delivery_outbound_logistics_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 7'),
-            administration_and_human_resources_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 8'),
-            purchasing_and_procurement_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 9'),
-            cyber_security_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 10'),
+            product_service_design_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 1') || '0|0',
+            project_planning_and_management_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 2')|| '0|0',
+            operations_production_of_physical_goods_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 3')|| '0|0',
+            collaboration_with_other_companies_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 4')|| '0|0',
+            inbound_logistics_warehousing_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 5')|| '0|0',
+            marketing_sales_customer_management_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 6')|| '0|0',
+            delivery_outbound_logistics_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 7')|| '0|0',
+            administration_and_human_resources_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 8')|| '0|0',
+            purchasing_and_procurement_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 9')|| '0|0',
+            cyber_security_m2_1_1: questionCalc1(header.EUSMEQuestion15, 'Row 10')|| '0|0',
             //question EUSMEQuestion16 
             digitalisation_needs_are_identified_m2_1_2: header.EUSMEQuestion16?.includes('Item 1') ? 1 : 0,
             financial_resources_m2_1_2: header.EUSMEQuestion16?.includes('Item 2') ? 1 : 0,
@@ -409,11 +411,11 @@ export function createCSV(Answers: Ref<any>) {
         const base64CSV = btoa(csvContent);
         let KPI_String = ""
         if(prefix === "EUPSO"){
-            if(header.EUPSOQuestion14){KPI_String = header.EUPSOQuestion2+";"+header.EUPSOQuestion3+";"+""+";"+header.EUPSOQuestion4+";"+header.EUPSOQuestion5+";"+header.EUPSOQuestion6+";"+header.EUPSOQuestion7+";"+header.EUPSOQuestion8+";"+PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)]+";"+PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)]+";"+header.EUPSOQuestion11.text4+";"+header.EUPSOQuestion11.text3+";"+header.EUPSOQuestion11.text1+", "+header.EUPSOQuestion11.text2+", "+header.EUPSOQuestion11.text3+";"+PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)]+";"+PSOsectors[parseInt(header.EUPSOQuestion14.slice(5).trim(), 10)]}
-            else{KPI_String = header.EUPSOQuestion2+";"+header.EUPSOQuestion3+";"+""+";"+header.EUPSOQuestion4+";"+header.EUPSOQuestion5+";"+header.EUPSOQuestion6+";"+header.EUPSOQuestion7+";"+header.EUPSOQuestion8+";"+PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)]+";"+PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)]+";"+header.EUPSOQuestion11.text4+";"+header.EUPSOQuestion11.text3+";"+header.EUPSOQuestion11.text1+", "+header.EUPSOQuestion11.text2+", "+header.EUPSOQuestion11.text3+";"+PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)]}
+            if(header.EUPSOQuestion14){KPI_String = header.EUDMAQuestionPartner+";"+header.EUPSOQuestion2+";"+header.EUPSOQuestion3+";"+""+";"+header.EUPSOQuestion4+";"+header.EUPSOQuestion5+";"+header.EUPSOQuestion6+";"+header.EUPSOQuestion7+";"+header.EUPSOQuestion8+";"+PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)]+";"+PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)]+";"+header.EUPSOQuestion11.text4+";"+header.EUPSOQuestion11.text3+";"+header.EUPSOQuestion11.text1+", "+header.EUPSOQuestion11.text2+", "+header.EUPSOQuestion11.text3+";"+PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)]+";"+PSOsectors[parseInt(header.EUPSOQuestion14.slice(5).trim(), 10)]}
+            else{KPI_String = header.EUDMAQuestionPartner+";"+header.EUPSOQuestion2+";"+header.EUPSOQuestion3+";"+""+";"+header.EUPSOQuestion4+";"+header.EUPSOQuestion5+";"+header.EUPSOQuestion6+";"+header.EUPSOQuestion7+";"+header.EUPSOQuestion8+";"+PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)]+";"+PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)]+";"+header.EUPSOQuestion11.text4+";"+header.EUPSOQuestion11.text3+";"+header.EUPSOQuestion11.text1+", "+header.EUPSOQuestion11.text2+", "+header.EUPSOQuestion11.text3+";"+PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)]}
         }else{
-            if(header.EUSMEQuestion14){KPI_String = header.EUSMEQuestion2+";"+""+";"+header.EUSMEQuestion3+";"+""+";"+header.EUSMEQuestion4+";"+header.EUSMEQuestion5+";"+header.EUSMEQuestion6+";"+header.EUSMEQuestion7+";"+header.EUSMEQuestion8+";"+SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)]+";"+header.EUSMEQuestion9+";"+header.EUSMEQuestion11.text4+";"+header.EUSMEQuestion11.text3+";"+header.EUSMEQuestion11.text1+", "+header.EUSMEQuestion11.text2+", "+header.EUSMEQuestion11.text3+";"+SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)]+";"+SMEsectors[parseInt(header.EUSMEQuestion14.slice(5).trim(), 10)]}
-            else{KPI_String = header.EUSMEQuestion2+";"+""+";"+header.EUSMEQuestion3+";"+""+";"+header.EUSMEQuestion4+";"+header.EUSMEQuestion5+";"+header.EUSMEQuestion6+";"+header.EUSMEQuestion7+";"+header.EUSMEQuestion8+";"+SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)]+";"+header.EUSMEQuestion9+";"+header.EUSMEQuestion11.text4+";"+header.EUSMEQuestion11.text3+";"+header.EUSMEQuestion11.text1+", "+header.EUSMEQuestion11.text2+", "+header.EUSMEQuestion11.text3+";"+SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)]}
+            if(header.EUSMEQuestion14){KPI_String = header.EUDMAQuestionPartner+";"+header.EUSMEQuestion2+";"+""+";"+header.EUSMEQuestion3+";"+""+";"+header.EUSMEQuestion4+";"+header.EUSMEQuestion5+";"+header.EUSMEQuestion6+";"+header.EUSMEQuestion7+";"+header.EUSMEQuestion8+";"+SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)]+";"+header.EUSMEQuestion9+";"+header.EUSMEQuestion11.text4+";"+header.EUSMEQuestion11.text3+";"+header.EUSMEQuestion11.text1+", "+header.EUSMEQuestion11.text2+", "+header.EUSMEQuestion11.text3+";"+SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)]+";"+SMEsectors[parseInt(header.EUSMEQuestion14.slice(5).trim(), 10)]}
+            else{KPI_String = header.EUDMAQuestionPartner+";"+header.EUSMEQuestion2+";"+""+";"+header.EUSMEQuestion3+";"+""+";"+header.EUSMEQuestion4+";"+header.EUSMEQuestion5+";"+header.EUSMEQuestion6+";"+header.EUSMEQuestion7+";"+header.EUSMEQuestion8+";"+SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)]+";"+header.EUSMEQuestion9+";"+header.EUSMEQuestion11.text4+";"+header.EUSMEQuestion11.text3+";"+header.EUSMEQuestion11.text1+", "+header.EUSMEQuestion11.text2+", "+header.EUSMEQuestion11.text3+";"+SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)]}
         }
 
         const templateParams1 = {

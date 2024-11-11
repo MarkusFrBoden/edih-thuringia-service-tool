@@ -30,6 +30,46 @@ export const EUDmaJSON = {
           "imageWidth": 800
         },
         {
+          "type": "dropdown",
+          "name": "EUDMAQuestionPartner",
+          "title": {
+            "de": "Wie sind Sie auf uns aufmerksam geworden?",
+            "en": "How did you find out about us?"
+          },
+          "choices": [
+            {
+              "value": "BPV",
+              "text": "BPV Consult GmbH"
+            },
+            {
+              "value": "BUW",
+              "text": "Bauhaus-Universität Weimar"
+            },
+            {
+              "value": "HIQ",
+              "text": "hiQ Projects GmbH"
+            },
+            {
+              "value": "NTAG",
+              "text": "NT Neue Technologie AG"
+            },
+            {
+              "value": "TUIL",
+              "text": "Technische Universität Ilmenau"
+            },
+            {
+              "value": "WBA",
+              "text": "Bauhaus Weiterbildungsakademie Weimar e.V."
+            },
+            {
+              "value": "WLA",
+              "text": "WeLoveApps GmbH"
+            }
+          ],
+          "showOtherItem": true,
+          "isRequired": true
+        },
+        {
           "type": "radiogroup",
           "name": "EUDMAQuestion1",
           "title": {
@@ -519,8 +559,8 @@ export const EUDmaJSON = {
         "en": "MODULE 1: Customer Data"
       },
       "description": {
-        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über die öffentliche Einrichtung an, die an einer EDIH-Unterstützung interessiert ist. Diese Daten werden benötigt, um auszuwerten, wie hoch der Grad der Digitalisierung Ihrer Einrichtung im Vergleich zu ähnlichen Einrichtungen ist.",
-        "en": "In this module, please provide basic general information about the public sector organisation that is interested in receiving EDIH support. This data is needed in order to analyse how your organisation’s level of digital maturity compares to that of similar others."
+        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über die öffentliche Einrichtung an, die an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Sollten Sie Ihre Ergebnisse nach dem Durchführen nicht an das EDIH senden, werden keine Informationen gespeichert.",
+        "en": "In this module, please provide general basic information about the public organisation that is interested in EDIH support. This data is required for further communication. If you do not send your results to the EDIH after they have been carried out, no information will be saved."
       }
     },
     {
@@ -2208,12 +2248,12 @@ export const EUDmaJSON = {
       ],
       "visibleIf": "{EUDMAQuestion1} = 'SME'",
       "title": {
-        "de": "MODUL 2: Grad der Digitalisierung",
-        "en": "MODULE 2: Digital Maturity"
+        "de": "MODUL 1: Kundendaten",
+        "en": "MODULE 1: Customer Data"
       },
       "description": {
-        "de": "Die Fragen in diesem Modul zielen darauf ab, den Digitalisierungsgrad Ihres Unternehmens zu messen. Die Angaben sollen dabei helfen, einzuordnen, an welchem Punkt des digitalen Wandels Ihr Unternehmen zurzeit steht, und zu ermitteln, in welchen Bereichen es Unterstützung durch das EDIH benötigen könnte. Sie werden auch dazu beitragen, die Dienstleistungen, die das EDIH für Ihr Unternehmen später erbringt, zu bewerten, und die Maßnahmen und Finanzinstrumente der EU zur Unterstützung des EDIH zu optimieren. ",
-        "en": "Questions in this module aim to measure the digital maturity of your enterprise. This information will help to characterise the departing point of the digital transformation journey of your enterprise, identifying areas where it might need EDIH support. It will also help to assess the services eventually provided by the EDIH to your enterprise as well as to fine tune the EU policies and financial instruments supporting EDIHs."
+        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über das Unternehmen an, das an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Sollten Sie Ihre Ergebnisse nach dem Durchführen nicht an das EDIH senden, werden keine Informationen gespeichert.",
+        "en": "In this module, please provide general basic information about the company that is interested in EDIH support. This data is required for further communication. If you do not send your results to the EDIH after they have been carried out, no information will be saved."
       }
     },
     {
