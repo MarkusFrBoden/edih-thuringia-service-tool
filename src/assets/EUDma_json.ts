@@ -43,19 +43,23 @@ export const EUDmaJSON = {
             },
             {
               "value": "BUW",
-              "text": "Bauhaus-Universität Weimar"
+              "text": "Bauhaus.Mobility"
             },
             {
               "value": "HIQ",
-              "text": "hiQ Projects GmbH"
+              "text": "highQ Computerlösungen"
             },
             {
               "value": "NTAG",
               "text": "NT Neue Technologie AG"
             },
             {
-              "value": "TUIL",
-              "text": "Technische Universität Ilmenau"
+              "value": "ThIMo",
+              "text": "Thüringer Innovationszentrum Mobilität (ThIMo)"
+            },
+            {
+              "value": "TZLR",
+              "text": "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)"
             },
             {
               "value": "WBA",
