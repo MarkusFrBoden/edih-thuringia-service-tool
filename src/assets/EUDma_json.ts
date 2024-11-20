@@ -38,13 +38,18 @@ export const EUDmaJSON = {
           },
           "choices": [
             {
-              "value": "BPV",
-              "text": "BPV Consult GmbH"
-            },
-            {
               "value": "BUW",
               "text": "Bauhaus.Mobility"
             },
+            {
+              "value": "WBA",
+              "text": "Bauhaus Weiterbildungsakademie Weimar e.V."
+            },
+            {
+              "value": "BPV",
+              "text": "BPV Consult GmbH"
+            },
+            
             {
               "value": "HIQ",
               "text": "highQ Computerlösungen"
@@ -60,10 +65,6 @@ export const EUDmaJSON = {
             {
               "value": "TZLR",
               "text": "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)"
-            },
-            {
-              "value": "WBA",
-              "text": "Bauhaus Weiterbildungsakademie Weimar e.V."
             },
             {
               "value": "WLA",
