@@ -49,7 +49,6 @@ export const EUDmaJSON = {
               "value": "BPV",
               "text": "BPV Consult GmbH"
             },
-            
             {
               "value": "HIQ",
               "text": "highQ Computerlösungen"
@@ -2234,8 +2233,8 @@ export const EUDmaJSON = {
                     }
                   ],
                   "title": {
-                    "de": "Zu welchem der folgenden großen Regierungsbereiche gehört Ihre Einrichtung? Bitte wählen Sie bis zu zwei Optionen aus",
-                    "en": "In which of the following government broad areas does your organisation belong2? Please select up to two options"
+                    "de": "In welchem Sektor ist Ihr Unternehmen hauptsächlich tätig? Bitte wählen Sie eine Option aus",
+                    "en": "In which sector of activity is your enterprise’s business primarily focused? Please select one option"
                   }
                 }
               ],
