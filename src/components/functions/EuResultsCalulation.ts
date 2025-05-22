@@ -315,7 +315,7 @@ export function EUcalculation(
                 let doughnutChartData = {} as doughnutChartData;
                 const dim = eval(`dim${i}`);
                 doughnutChartData = {
-                    labels: ['Dimension' + i, 'Missing'],
+                    labels: ['Erreichte Punkte', 'Fehlende Punkte'],
                     datasets: [
                         {
                             backgroundColor: ['#41B883', '#E46651'],

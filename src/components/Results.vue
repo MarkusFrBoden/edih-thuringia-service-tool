@@ -2,13 +2,15 @@
     <div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center"> <!-- zentraler Container -->
+                <div class="col-12 text-center"> <!-- Volle Breite auf allen Bildschirmgrößen -->
                     <div class="text-overlay mb-2">
                         <span style="font-size: 50px; color: #41B883;">
                             Ø {{ props.EuResults.dimG.toFixed(2) }}
                         </span>
                     </div>
-                    <radarChart :data="props.radarChartDataValues" />
+                    <div style="width: 100%; min-height: 400px;"> 
+                        <radarChart :data="props.radarChartDataValues" />
+                    </div>
                 </div>
             </div>
             <div class="row">
