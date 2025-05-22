@@ -382,64 +382,64 @@ export const EUDmaJSON = {
                     {
                       "value": "Item 1",
                       "text": {
-                        "de": "Dienstleistungen der allgemeinen öffentlichen Verwaltung",
-                        "en": "General public services"
-                      }
-                    },
-                    {
-                      "value": "Item 2",
-                      "text": {
                         "de": "Verteidigung",
                         "en": "Defence"
                       }
                     },
                     {
-                      "value": "Item 3",
-                      "text": {
-                        "de": "Öffentliche Ordnung und Sicherheit",
-                        "en": "Public order and safety"
-                      }
-                    },
-                    {
-                      "value": "Item 4",
+                      "value": "Item 2",
                       "text": {
                         "de": "Wirtschaftliche Angelegenheiten",
                         "en": "Economic affairs"
                       }
                     },
                     {
-                      "value": "Item 5",
+                      "value": "Item 3",
+                      "text": {
+                        "de": "Bildungswesen",
+                        "en": "Education"
+                      }
+                    },
+                    {
+                      "value": "Item 4",
                       "text": {
                         "de": "Umweltschutz",
                         "en": "Environmental protection"
                       }
                     },
                     {
-                      "value": "Item 6",
+                      "value": "Item 5",
                       "text": {
-                        "de": "Wohnungswesen",
-                        "en": "Housing and community amenities"
+                        "de": "Dienstleistungen der allgemeinen öffentlichen Verwaltung",
+                        "en": "General public services"
                       }
                     },
                     {
-                      "value": "Item 7",
+                      "value": "Item 6",
                       "text": {
                         "de": "Gesundheit",
                         "en": "Health"
                       }
                     },
                     {
+                      "value": "Item 7",
+                      "text": {
+                        "de": "Wohnungswesen",
+                        "en": "Housing and community amenities"
+                      }
+                    },
+                    {
                       "value": "Item 8",
                       "text": {
-                        "de": "Freizeitgestaltung, Sport, Kultur und Religion",
-                        "en": "Recreation, culture and religion"
+                        "de": "Öffentliche Ordnung und Sicherheit",
+                        "en": "Public order and safety"
                       }
                     },
                     {
                       "value": "Item 9",
                       "text": {
-                        "de": "Bildungswesen",
-                        "en": "Education"
+                        "de": "Freizeitgestaltung, Sport, Kultur und Religion",
+                        "en": "Recreation, culture and religion"
                       }
                     },
                     {
@@ -2055,168 +2055,294 @@ export const EUDmaJSON = {
                           "value": "Item 1",
                           "text": {
                             "de": "Luft- und Raumfahrt",
-                            "en": "Aeronautics & Space"
+                            "en": "Aeronautics"
                           }
                         },
                         {
                           "value": "Item 2",
                           "text": {
-                            "de": "Landwirtschaft und Ernährung",
-                            "en": "Agriculture and food"
+                            "de": "Agrar- und Lebensmittelbiotechnologie",
+                            "en": "Agricultural biotechnology and food biotechnology"
                           }
                         },
                         {
                           "value": "Item 3",
                           "text": {
-                            "de": "Erbringung von öffentlichen und persönlichen Dienstleistungen",
-                            "en": "Community, social and personal service activities"
+                            "de": "Automobilindustrie",
+                            "en": "Automotive"
                           }
                         },
                         {
                           "value": "Item 4",
                           "text": {
-                            "de": "Baugewerbe",
-                            "en": "Construction"
+                            "de": "Gemeinschaftsgeführte lokale Entwicklung",
+                            "en": "Community-Led Local Development"
                           }
                         },
                         {
                           "value": "Item 5",
                           "text": {
-                            "de": "Gebrauchsgüter",
-                            "en": "Consumer goods/products"
+                            "de": "Bauwesen und Montage",
+                            "en": "Construction & Assembly"
                           }
                         },
                         {
                           "value": "Item 6",
                           "text": {
-                            "de": "Kultur- und Kreativwirtschaft",
-                            "en": "Culture and Creative industries"
+                            "de": "Konsumgüter",
+                            "en": "Consumer products"
                           }
                         },
                         {
                           "value": "Item 7",
                           "text": {
-                            "de": "Verteidigung und Sicherheit",
-                            "en": "Defence and security"
+                            "de": "Kultur- und Kreativwirtschaft",
+                            "en": "Cultural and creative economy"
                           }
                         },
                         {
                           "value": "Item 8",
                           "text": {
-                            "de": "Erziehung und Unterricht",
-                            "en": "Education"
+                            "de": "Verteidigung",
+                            "en": "Defence"
                           }
                         },
                         {
                           "value": "Item 9",
                           "text": {
-                            "de": "Energie und öffentliche Versorgung",
-                            "en": "Energy and utilities"
+                            "de": "Bildung",
+                            "en": "Education"
                           }
                         },
                         {
                           "value": "Item 10",
+                          "text": {
+                            "de": "Elektrizität",
+                            "en": "Electricity"
+                          }
+                        },
+                        {
+                          "value": "Item 11",
+                          "text": {
+                            "de": "Energie",
+                            "en": "Energy"
+                          }
+                        },
+                        {
+                          "value": "Item 12",
+                          "text": {
+                            "de": "Energie, Brennstoffe und Erdöltechnik",
+                            "en": "Energy, fuels and petroleum engineering"
+                          }
+                        },
+                        {
+                          "value": "Item 13",
                           "text": {
                             "de": "Umwelt",
                             "en": "Environment"
                           }
                         },
                         {
-                          "value": "Item 11",
-                          "text": {
-                            "de": "Finanzdienstleistungen",
-                            "en": "Financial services"
-                          }
-                        },
-                        {
-                          "value": "Item 12",
-                          "text": {
-                            "de": "Biowissenschaften und Gesundheitsversorgung",
-                            "en": "SLife sciences & healthcare"
-                          }
-                        },
-                        {
-                          "value": "Item 13",
-                          "text": {
-                            "de": "Herstellung von Waren",
-                            "en": "Manufacturing"
-                          }
-                        },
-                        {
                           "value": "Item 14",
                           "text": {
-                            "de": "Meeres- und Fischereiwirtschaft",
-                            "en": "Maritime and fishery"
+                            "de": "Finanzen",
+                            "en": "Financial"
                           }
                         },
                         {
                           "value": "Item 15",
                           "text": {
-                            "de": "Bergbau und Gewinnung von Steinen und Erden",
-                            "en": "Mining and quarrying"
+                            "de": "Fischerei",
+                            "en": "Fishery"
                           }
                         },
                         {
                           "value": "Item 16",
                           "text": {
-                            "de": "Mobilität (einschließlich Kraftfahrzeuge)",
-                            "en": "Mobility (incl. Automotive)"
+                            "de": "Lebensmittel und Getränke",
+                            "en": "Food and beverages"
                           }
                         },
                         {
                           "value": "Item 17",
                           "text": {
-                            "de": "Öffentliche Verwaltung",
-                            "en": "Public administration"
+                            "de": "Gesundheitswesen",
+                            "en": "Health care"
                           }
                         },
                         {
                           "value": "Item 18",
                           "text": {
-                            "de": "Grundstücks- und Wohnungswesen, Vermietung beweglicher Sachen, Erbringung von unternehmensbezogenen Dienstleistungen",
-                            "en": "Real estate, renting and business activities"
+                            "de": "Leder",
+                            "en": "Leather"
                           }
                         },
                         {
                           "value": "Item 19",
-                          "text": {
-                            "de": "Erbringung von freiberuflichen, wissenschaftlichen und technischen Dienstleistungen",
-                            "en": "Professional, Scientific and Technical Activities"
-                          }
-                        },
-                        {
-                          "value": "Item 20",
-                          "text": {
-                            "de": "Telekommunikation, Information und Kommunikation",
-                            "en": "Telecommunications, Information and Communication"
-                          }
-                        },
-                        {
-                          "value": "Item 21",
-                          "text": {
-                            "de": "Tourismus (einschließlich Restaurants und Beherbergung)",
-                            "en": "Tourism (incl. restaurants and hospitality)"
-                          }
-                        },
-                        {
-                          "value": "Item 22",
-                          "text": {
-                            "de": "Groß- und Einzelhandel",
-                            "en": "Wholesale and retail"
-                          }
-                        },
-                        {
-                          "value": "Item 23",
                           "text": {
                             "de": "Legale Aspekte",
                             "en": "Legal Aspects"
                           }
                         },
                         {
+                          "value": "Item 20",
+                          "text": {
+                            "de": "Lebenswissenschaften",
+                            "en": "Life sciences"
+                          }
+                        },
+                        {
+                          "value": "Item 21",
+                          "text": {
+                            "de": "Fertigung und Verarbeitung",
+                            "en": "Manufacturing and processing"
+                          }
+                        },
+                        {
+                          "value": "Item 22",
+                          "text": {
+                            "de": "Seefahrt",
+                            "en": "Maritime"
+                          }
+                        },
+                        {
+                          "value": "Item 23",
+                          "text": {
+                            "de": "Metallbearbeitung und industrielle Produktion",
+                            "en": "Metal working and industrial production"
+                          }
+                        },
+                        {
                           "value": "Item 24",
                           "text": {
-                            "de": "Verordnung",
+                            "de": "Bergbau und Rohstoffgewinnung",
+                            "en": "Mining and extraction"
+                          }
+                        },
+                        {
+                          "value": "Item 25",
+                          "text": {
+                            "de": "Nichtmetallische Materialien und Grundprozesse",
+                            "en": "NMP Non-Metallic Materials & basic processes"
+                          }
+                        },
+                        {
+                          "value": "Item 26",
+                          "text": {
+                            "de": "Kernenergie",
+                            "en": "Nuclear"
+                          }
+                        },
+                        {
+                          "value": "Item 27",
+                          "text": {
+                            "de": "Papier und Holz",
+                            "en": "Paper and wood"
+                          }
+                        },
+                        {
+                          "value": "Item 28",
+                          "text": {
+                            "de": "Persönliche Dienstleistungen",
+                            "en": "Personal services"
+                          }
+                        },
+                        {
+                          "value": "Item 29",
+                          "text": {
+                            "de": "Polymere und Kunststoffe",
+                            "en": "Polymers and plastics"
+                          }
+                        },
+                        {
+                          "value": "Item 30",
+                          "text": {
+                            "de": "Öffentliche Verwaltung",
+                            "en": "Public administration"
+                          }
+                        },
+                        {
+                          "value": "Item 31",
+                          "text": {
+                            "de": "Immobilienwesen",
+                            "en": "Real estate"
+                          }
+                        },
+                        {
+                          "value": "Item 32",
+                          "text": {
+                            "de": "Regulierung",
                             "en": "Regulation"
+                          }
+                        },
+                        {
+                          "value": "Item 33",
+                          "text": {
+                            "de": "Einzel-, Großhandel oder Vertrieb",
+                            "en": "Retail, wholesale or distribution"
+                          }
+                        },
+                        {
+                          "value": "Item 34",
+                          "text": {
+                            "de": "Sicherheit",
+                            "en": "Security"
+                          }
+                        },
+                        {
+                          "value": "Item 35",
+                          "text": {
+                            "de": "Intelligente Städte",
+                            "en": "Smart City"
+                          }
+                        },
+                        {
+                          "value": "Item 36",
+                          "text": {
+                            "de": "Weltraum",
+                            "en": "Space"
+                          }
+                        },
+                        {
+                          "value": "Item 37",
+                          "text": {
+                            "de": "Telekommunikation",
+                            "en": "Telecommunications"
+                          }
+                        },
+                        {
+                          "value": "Item 38",
+                          "text": {
+                            "de": "Textilien",
+                            "en": "Textiles"
+                          }
+                        },
+                        {
+                          "value": "Item 39",
+                          "text": {
+                            "de": "Tabak",
+                            "en": "Tobacco"
+                          }
+                        },
+                        {
+                          "value": "Item 40",
+                          "text": {
+                            "de": "Transport und Mobilität",
+                            "en": "Transport & Mobility"
+                          }
+                        },
+                        {
+                          "value": "Item 41",
+                          "text": {
+                            "de": "Transportsektor",
+                            "en": "Transport sector"
+                          }
+                        },
+                        {
+                          "value": "Item 42",
+                          "text": {
+                            "de": "Reise und Tourismus",
+                            "en": "Travel and tourism"
                           }
                         }
                       ],
