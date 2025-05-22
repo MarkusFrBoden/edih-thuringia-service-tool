@@ -33,8 +33,8 @@ export const EUDmaJSON = {
           "type": "dropdown",
           "name": "EUDMAQuestionPartner",
           "title": {
-            "de": "Wie sind Sie auf uns aufmerksam geworden?",
-            "en": "How did you find out about us?"
+            "de": "Bitte wählen Sie den Partner, dessen Service Sie in Anspruch nehmen möchten",
+            "en": "Please select the partner whose service you would like to receive"
           },
           "choices": [
             {
@@ -77,25 +77,23 @@ export const EUDmaJSON = {
           "type": "radiogroup",
           "name": "EUDMAQuestion1",
           "title": {
-            "de": "Unternehmens-/Organisationstyp",
-            "en": "Type of company/organization"
-          },
-          "description": {
-            "de": "Kleine und mittlere Unternehmen (SME) oder öffentliche Organisationen (PSO)",
-            "en": "Small- and Medium-sized Enterprises (SME) or Public Service Organisations (PSO)"
+            "de": "Wählen Sie Ihren Unternehmens-/Organisationstyp",
+            "en": "Select your company/organization type"
           },
           "defaultValue": "PSO",
           "choices": [
             {
               "value": "PSO",
               "text": {
-                "de": "PSO"
+                "de": "Öffentliche Einrichtung oder Organisation",
+                "en": "Public sector organization"
               }
             },
             {
               "value": "SME",
               "text": {
-                "de": "SME"
+                "de": "Kleines oder mittlelständisches Unternehmen",
+                "en": "Small or medium-sized enterprise"
               }
             }
           ]
@@ -173,8 +171,8 @@ export const EUDmaJSON = {
               "type": "text",
               "name": "EUPSOQuestion3",
               "title": {
-                "de": "Sonstige Identifizierungsnummer (Umsatzsteuer o. Ä.)",
-                "en": "Other Identification Number (VAT or equivalent)"
+                "de": "Identifizierungsnummer (Umsatzsteuer o. Ä.)",
+                "en": "Identification Number (VAT or equivalent)"
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -268,13 +266,6 @@ export const EUDmaJSON = {
                   "text": {
                     "de": "Provinz-/Gemeindebehörde",
                     "en": "Province/municipal authority"
-                  }
-                },
-                {
-                  "value": "other",
-                  "text": {
-                    "de": "Andere",
-                    "en": "Other"
                   }
                 }
               ]
@@ -2978,8 +2969,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Item 2",
                   "text": {
-                    "de": "All client-related data is protected from cyberattacks",
-                    "en": "Alle kundenbezogenen Daten sind vor Cyberangriffen geschützt"
+                    "de": "Alle kundenbezogenen Daten sind vor Cyberangriffen geschützt",
+                    "en": "All client-related data is protected from cyberattacks"
                   }
                 },
                 {

@@ -13,12 +13,10 @@ export function createCSV(Answers: Ref<any>) {
     const prefix = header.EUPSOQuestion1 ? 'EUPSO' : 'EUSME';
 
     //transform date
-    const inputDateString = new Date().toLocaleString();
-    const parts = inputDateString.split(", ")[0].split(".");
-    const inputDate = new Date(`${parts[1]}/${parts[0]}/${parts[2]}`);
-    const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
-    const day = inputDate.getDate().toString().padStart(2, "0");
-    const year = inputDate.getFullYear();
+    const now = new Date();
+    const month = (now.getMonth() + 1).toString().padStart(2, "0");
+    const day = now.getDate().toString().padStart(2, "0");
+    const year = now.getFullYear();
     const formattedDate = `${month}/${day}/${year}`;
 
     //function for 2 answers 1|1
@@ -420,7 +418,8 @@ export function createCSV(Answers: Ref<any>) {
 
         const templateParams1 = {
             customer_name: header[`${prefix}Question2`],
-            customer_vat: header[`${prefix}Question3`],
+            costumer_type: (prefix === "EUPSO" ? " (PSO)" : " (SME)"),
+            customer_partner: header.EUDMAQuestionPartner,
             customer_contact: header[`${prefix}Question4`],
             customer_mail: header[`${prefix}Question6`],
             dma_date: header[`${prefix}Question1`],
