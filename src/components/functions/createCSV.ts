@@ -436,7 +436,7 @@ export function createCSV(Answers: Ref<any>) {
 
         const templateParams1 = {
             customer_name: header[`${prefix}Question2`],
-            costumer_type: (prefix === "EUPSO" ? " (PSO)" : " (SME)"),
+            costumer_type: (prefix === "EUPSO" ? "PSO" : "SME"),
             customer_partner: header.EUDMAQuestionPartner,
             customer_contact: header[`${prefix}Question4`],
             customer_mail: header[`${prefix}Question6`],
