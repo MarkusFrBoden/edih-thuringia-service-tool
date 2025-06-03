@@ -553,8 +553,8 @@ export const EUDmaJSON = {
         "en": "MODULE 1: Customer Data"
       },
       "description": {
-        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über die öffentliche Einrichtung an, die an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Sollten Sie Ihre Ergebnisse nach dem Durchführen nicht an das EDIH senden, werden keine Informationen gespeichert.",
-        "en": "In this module, please provide general basic information about the public organisation that is interested in EDIH support. This data is required for further communication. If you do not send your results to the EDIH after they have been carried out, no information will be saved."
+        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über die öffentliche Einrichtung an, die an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Bei den Feldern, die mit einem roten * versehen sind, handelt es sich um ein Pflichtfeld. Sollten Sie Ihre Ergebnisse nach dem Durchführen des Digitalchecks nicht an das EDIH senden wollen, werden die angegebenen Informationen nicht gespeichert.",
+        "en": "Please provide general basic information in this module about the public institution that is interested in EDIH support. This data is required for further communication. Fields marked with a red * are mandatory. If you do not wish to send your results to the EDIH after completing the digital check, the information you provide will not be saved."
       }
     },
     {
@@ -2373,8 +2373,8 @@ export const EUDmaJSON = {
         "en": "MODULE 1: Customer Data"
       },
       "description": {
-        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über das Unternehmen an, das an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Sollten Sie Ihre Ergebnisse nach dem Durchführen nicht an das EDIH senden, werden keine Informationen gespeichert.",
-        "en": "In this module, please provide general basic information about the company that is interested in EDIH support. This data is required for further communication. If you do not send your results to the EDIH after they have been carried out, no information will be saved."
+        "de": "Bitte geben Sie in diesem Modul allgemeine Basisinformationen über das Unternehmen an, das an einer EDIH-Unterstützung interessiert ist. Diese Daten werden für die weitere Kommunikation benötigt. Bei den Feldern, die mit einem roten * versehen sind, handelt es sich um ein Pflichtfeld. Sollten Sie Ihre Ergebnisse nach dem Durchführen des Digitalchecks nicht an das EDIH senden wollen, werden die angegebenen Informationen nicht gespeichert.",
+        "en": "In this module, please provide general basic information about the company that is interested in EDIH support. This data is required for further communication. Fields marked with a red * are mandatory. If you do not wish to send your results to the EDIH after completing the digital check, the information you provide will not be saved."
       }
     },
     {
