@@ -348,7 +348,7 @@ export function createCSV(Answers: Ref<any>) {
     csvContent += "\n";
 
     // send results to the EDIH for EU-Upload
-    let PSOtypes = [
+    /*let PSOtypes = [
         "National authority",
         "Regional authority",
         "Province/municipal authority",
@@ -420,7 +420,7 @@ export function createCSV(Answers: Ref<any>) {
         "Transport & Mobility",
         "Transport sector",
         "Travel and tourism"
-    ];
+    ];*/
 
 
     let sendEDIHEmail = () => {
