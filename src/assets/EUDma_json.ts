@@ -706,8 +706,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Yes",
                   "text": {
-                    "de": "",
-                    "en": ""
+                    "de": " ",
+                    "en": " "
                   }
                 }
               ],
@@ -1361,8 +1361,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Yes",
                   "text": {
-                    "de": "",
-                    "en": ""
+                    "de": " ",
+                    "en": " "
                   }
                 }
               ],
@@ -2449,8 +2449,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Yes",
                   "text": {
-                    "de": "",
-                    "en": ""
+                    "de": " ",
+                    "en": " "
                   }
                 }
               ],
