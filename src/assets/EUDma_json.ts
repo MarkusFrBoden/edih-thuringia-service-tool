@@ -102,31 +102,30 @@ export const EUDmaJSON = {
           "type": "radiogroup",
           "name": "EUDMAQuestion0",
           "title": {
-            "de": "Zeitpunkt des Digitalchecks",
-            "en": "Time of digital maturity assessment"
-          },
-          "description": {
-            "de": "T0 - vor dem EDIH-Service, T1 - während des EDIH-Services, oder T2 - nach dem EDIH-Service",
-            "en": "T0 - before the EDIH service, T1 - during the EDIH service, or T2 - after the EDIH service"
+            "de": "Bitte wählen Sie den Zeitpunkt des Digitalchecks",
+            "en": "Please choose the time of the digital maturity assessment"
           },
           "defaultValue": "T0",
           "choices": [
             {
               "value": "T0",
               "text": {
-                "de": "T0"
+                "de": "T0 (vor dem EDIH-Service)",
+                "en": "T0 (before the EDIH service)"
               }
             },
             {
               "value": "T1",
               "text": {
-                "de": "T1"
+                "de": "T1 (1 Jahr nach T0)",
+                "en": "T1 (1 year after T0)"
               }
             },
             {
               "value": "T2",
               "text": {
-                "de": "T2"
+                "de": "T2 (2 Jahre nach T1)",
+                "en": "T2 (2 years after T1)"
               }
             }
           ]
@@ -152,16 +151,16 @@ export const EUDmaJSON = {
                 "en": "Date"
               },
               "defaultValue": new Date().toISOString().split('T')[0],
-              "isRequired": true,
-
+              "isRequired": false,
+              "visible": false,
               "inputType": "date"
             },
             {
               "type": "text",
               "name": "EUPSOQuestion2",
               "title": {
-                "de": "Name Ihrer Einrichtung",
-                "en": "Name of your organisation"
+                "de": "Name der Einrichtung in der Sie arbeiten.",
+                "en": "Name of the organisation you work for."
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -171,8 +170,8 @@ export const EUDmaJSON = {
               "type": "text",
               "name": "EUPSOQuestion3",
               "title": {
-                "de": "Identifizierungsnummer (Umsatzsteuer o. Ä.)",
-                "en": "Identification Number (VAT or equivalent)"
+                "de": "Identifizierungsnummer (USt-IdNr. aus Websitenimpressum, Handelsregisternummer oder ähnliches).",
+                "en": "Identification Number (VAT or equivalent)."
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -186,8 +185,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUPSOQuestion4",
                   "title": {
-                    "de": "Name",
-                    "en": "Name"
+                    "de": "Ihr vollständiger Name.",
+                    "en": "Your full name."
                   },
                   "defaultValue": " ",
                   "isRequired": true,
@@ -196,8 +195,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUPSOQuestion5",
                   "title": {
-                    "de": "Funktion in der Einrichtung",
-                    "en": "Role in the organisation"
+                    "de": "Ihre Funktion in der Einrichtung.",
+                    "en": "Your role in the organisation."
                   },
                   "defaultValue": " ",
                   "isRequired": true,
@@ -206,8 +205,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUPSOQuestion6",
                   "title": {
-                    "de": "E-Mail-Adresse",
-                    "en": "Email address"
+                    "de": "Ihre E-Mail-Adresse.",
+                    "en": "Your email address."
                   },
                   "defaultValue": " ",
                   "isRequired": true,
@@ -217,11 +216,11 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUPSOQuestion7",
                   "title": {
-                    "de": "Telefonnummer",
-                    "en": "Telephone:"
+                    "de": "Ihre Telefonnummer.",
+                    "en": "Your telephonenumber."
                   },
                   "defaultValue": " ",
-                  "isRequired": true,
+                  "isRequired": false,
                   "inputType": "tel"
                 }
               ],
@@ -231,8 +230,8 @@ export const EUDmaJSON = {
               "type": "text",
               "name": "EUPSOQuestion8",
               "title": {
-                "de": "Website",
-                "en": "Website"
+                "de": "Die Website Ihrer Organisation.",
+                "en": "The website of your organisation."
               },
               "defaultValue": " ",
               "inputType": "url"
@@ -241,8 +240,8 @@ export const EUDmaJSON = {
               "type": "radiogroup",
               "name": "EUPSOQuestion9",
               "title": {
-                "de": "Art der öffentlichen Einrichtung",
-                "en": "Type of public sector organisation"
+                "de": "Die Art Ihrer öffentlichen Einrichtung.",
+                "en": "The type of your public sector organisation."
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -274,8 +273,8 @@ export const EUDmaJSON = {
               "type": "radiogroup",
               "name": "EUPSOQuestion10",
               "title": {
-                "de": "Zahl der Beschäftigten der Einrichtung",
-                "en": "Organisation’s staff size"
+                "de": "Die Zahl der Beschäftigten der Einrichtung.",
+                "en": "Organisation’s staff size."
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -307,8 +306,8 @@ export const EUDmaJSON = {
               "type": "multipletext",
               "name": "EUPSOQuestion11",
               "title": {
-                "de": "Vollständige Anschrift",
-                "en": "Full address"
+                "de": "Die vollständige Anschrift der Organisation.",
+                "en": "The full address of the organisation."
               },
               "isRequired": true,
               "items": [
@@ -346,8 +345,8 @@ export const EUDmaJSON = {
               "type": "text",
               "name": "EUPSOQuestion12",
               "title": {
-                "de": "PIC-Nummer",
-                "en": "PIC number"
+                "de": "PIC-Nummer.",
+                "en": "PIC number."
               },
               "description": {
                 "de": "Falls vorhanden, wird von EDIH ausgefüllt",
@@ -374,8 +373,8 @@ export const EUDmaJSON = {
                   "type": "dropdown",
                   "name": "EUPSOQuestion13",
                   "title": {
-                    "de": "Primär (eine Option obligatorisch)",
-                    "en": "Primary (one mandatory)"
+                    "de": "Primär (eine Option obligatorisch).",
+                    "en": "Primary (one mandatory)."
                   },
                   "defaultValue": " ",
                   "choices": [
@@ -457,8 +456,8 @@ export const EUDmaJSON = {
                   "type": "dropdown",
                   "name": "EUPSOQuestion14",
                   "title": {
-                    "de": "Sekundär (eine Option fakultativ)",
-                    "en": "Secondary (one optional)"
+                    "de": "Sekundär (eine Option fakultativ).",
+                    "en": "Secondary (one optional)."
                   },
                   "defaultValue": " ",
                   "choices": [
@@ -600,8 +599,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion15",
               "title": {
-                "de": "Welche Vorkehrungen wurden getroffen, um Ihre Einrichtung auf die (weitere) Digitalisierung vorzubereiten? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "In which of the following ways is your organisation prepared for (more) digitalisation? Please select all options that apply"
+                "de": "Welche Vorkehrungen wurden getroffen, um Ihre Einrichtung auf die (weitere) Digitalisierung vorzubereiten? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "In which of the following ways is your organisation prepared for (more) digitalisation? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -683,8 +682,8 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUPSOQuestion16",
               "title": {
-                "de": "In welchen der folgenden operativen Bereiche hat Ihre Einrichtung bereits in die Digitalisierung investiert, und in welchen Bereichen plant sie, in Zukunft zu investieren? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "In which of the following operational areas has your organisation already invested in digitalisation and in which ones does it plan to invest in the future? Please select all options that apply"
+                "de": "In welchen der folgenden operativen Bereiche hat Ihre Einrichtung bereits in die Digitalisierung investiert, und in welchen Bereichen plant sie, in Zukunft zu investieren? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "In which of the following operational areas has your organisation already invested in digitalisation and in which ones does it plan to invest in the future? Please select all options that apply."
               },
               "defaultValue": " ",
               "columns": [
@@ -791,8 +790,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion17",
               "title": {
-                "de": "Welche der folgenden digitalen Technologien und Lösungen werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "Which of the following digital technologies and solutions are already used by your organisation? Please select all options that apply"
+                "de": "Welche der folgenden digitalen Technologien und Lösungen werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "Which of the following digital technologies and solutions are already used by your organisation? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -867,8 +866,8 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUPSOQuestion18",
               "title": {
-                "de": "Welche der folgenden fortgeschrittenen digitalen Technologien werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen anhand der vorgegebenen Skala aus",
-                "en": "Which of the following advanced digital technologies are already used by your organisation? Please choose all options that apply using the provided scale"
+                "de": "Welche der folgenden fortgeschrittenen digitalen Technologien werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen anhand der vorgegebenen Skala aus.",
+                "en": "Which of the following advanced digital technologies are already used by your organisation? Please choose all options that apply using the provided scale."
               },
               "defaultValue": {
                 "Row 1": {
@@ -1029,8 +1028,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion19",
               "title": {
-                "de": "Was tut Ihre Einrichtung, um ihre Beschäftigten für die Digitalisierung zu qualifizieren und weiterzubilden? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "What does your organisation do to re-skill and up-skill its staff for digitalisation? Please select all options that apply"
+                "de": "Was tut Ihre Einrichtung, um ihre Beschäftigten für die Digitalisierung zu qualifizieren und weiterzubilden? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "What does your organisation do to re-skill and up-skill its staff for digitalisation? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -1091,8 +1090,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion20",
               "title": {
-                "de": "Wie bindet Ihre Einrichtung bei der Einführung neuer digitaler Lösungen ihre Beschäftigten und Endnutzer (Bürgerinnen und Bürger/Unternehmen im Falle digitaler öffentlicher Dienste) ein und befähigt sie? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "When adopting new digital solutions, how does your organisation engage and empower its staff and end-users (citizens/businesses in case of digital public services)? Please select all options that apply"
+                "de": "Wie bindet Ihre Einrichtung bei der Einführung neuer digitaler Lösungen ihre Beschäftigten und Endnutzer (Bürgerinnen und Bürger/Unternehmen im Falle digitaler öffentlicher Dienste) ein und befähigt sie? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "When adopting new digital solutions, how does your organisation engage and empower its staff and end-users (citizens/businesses in case of digital public services)? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -1190,8 +1189,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion21",
               "title": {
-                "de": "Wie werden die Daten Ihrer Einrichtung verwaltet (hinsichtlich Speicherung, Organisation, Zugriff und Nutzung)? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "How are your organisation’s data managed (i.e. stored, organised, accessed and exploited)? Please select all options that apply"
+                "de": "Wie werden die Daten Ihrer Einrichtung verwaltet (hinsichtlich Speicherung, Organisation, Zugriff und Nutzung)? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "How are your organisation’s data managed (i.e. stored, organised, accessed and exploited)? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -1266,8 +1265,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion22",
               "title": {
-                "de": "Sind die Daten Ihrer Einrichtung ausreichend gesichert? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "Are your organisations’ data sufficiently secured? Please select all options that apply"
+                "de": "Sind die Daten Ihrer Einrichtung ausreichend gesichert? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "Are your organisations’ data sufficiently secured? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -1337,8 +1336,8 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUPSOQuestion23",
               "title": {
-                "de": "Was unternimmt Ihre Organisation bei der Digitalisierung von Prozessen und Dienstleistungen, um Daten, Informationen und Wissen mit anderen öffentlichen Einrichtungen auszutauschen? Bitte wählen Sie alle Optionen, die für Ihre Einrichtung gelten, anhand der angegebenen Skala aus",
-                "en": "While digitalising processes and services, what does your organization do to share data, information and knowledge with other public sector organizations? Please select all options that apply to your organisation using the provided scale"
+                "de": "Was unternimmt Ihre Organisation bei der Digitalisierung von Prozessen und Dienstleistungen, um Daten, Informationen und Wissen mit anderen öffentlichen Einrichtungen auszutauschen? Bitte wählen Sie alle Optionen, die für Ihre Einrichtung gelten, anhand der angegebenen Skala aus.",
+                "en": "While digitalising processes and services, what does your organization do to share data, information and knowledge with other public sector organizations? Please select all options that apply to your organisation using the provided scale."
               },
               "defaultValue": " ",
               "columns": [
@@ -1501,8 +1500,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUPSOQuestion24",
               "title": {
-                "de": "Wie nutzt Ihre Einrichtung digitale Technologien, um zur ökologischen Nachhaltigkeit beizutragen? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "How does your organisation make use of digital technologies to contribute to environmental sustainability? Please select all options that apply"
+                "de": "Wie nutzt Ihre Einrichtung digitale Technologien, um zur ökologischen Nachhaltigkeit beizutragen? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "How does your organisation make use of digital technologies to contribute to environmental sustainability? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -1577,8 +1576,8 @@ export const EUDmaJSON = {
               "type": "matrix",
               "name": "EUPSOQuestion25",
               "title": {
-                "de": "Berücksichtigt Ihre Einrichtung bei ihren Digitalisierungsentscheidungen und digitalen Abläufen auch die Auswirkungen auf die Umwelt? Bitte bewerten Sie alle zutreffenden Optionen",
-                "en": "Is your organisation taking into account environmental impacts in its digital choices and practices? Please grade all options that apply using this scale"
+                "de": "Berücksichtigt Ihre Einrichtung bei ihren Digitalisierungsentscheidungen und digitalen Abläufen auch die Auswirkungen auf die Umwelt? Bitte bewerten Sie alle zutreffenden Optionen.",
+                "en": "Is your organisation taking into account environmental impacts in its digital choices and practices? Please grade all options that apply using this scale."
               },
               "defaultValue": {
                 "Row 1": "Column 1",
@@ -1672,15 +1671,16 @@ export const EUDmaJSON = {
                 "en": "Date"
               },
               "defaultValue": new Date().toISOString().split('T')[0],
-              "isRequired": true,
+              "isRequired": false,
+              "visible": false,
               "inputType": "date"
             },
             {
               "type": "text",
               "name": "EUSMEQuestion2",
               "title": {
-                "de": "Name der vom EDIH unterstützten Einrichtung",
-                "en": "Name of the organisation supported by the EDIH"
+                "de": "Bitte geben Sie den Namen des Unternehmens an, in dem Sie beschäftigt sind.",
+                "en": "Please enter the name of the company you work for."
               },
               "defaultValue": " ",
               "isRequired": true,
@@ -1693,8 +1693,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUSMEQuestion3",
                   "title": {
-                    "de": "Sonstige Identifizierungsnummer (Umsatzsteuer o. Ä.)",
-                    "en": "Other Identification Number (VAT or equivalent)"
+                    "de": "Identifizierungsnummer (USt-IdNr. aus Websitenimpressum, Handelsregisternummer oder ähnliches).",
+                    "en": "Identification Number (VAT or equivalent)."
                   },
                   "isRequired": true
                 },
@@ -1706,8 +1706,8 @@ export const EUDmaJSON = {
                       "type": "text",
                       "name": "EUSMEQuestion4",
                       "title": {
-                        "de": "Name",
-                        "en": "Name"
+                        "de": "Bitte geben Sie hier Ihren vollständigen Namen an.",
+                        "en": "Please enter your full name here."
                       },
                       "isRequired": true
                     },
@@ -1715,8 +1715,8 @@ export const EUDmaJSON = {
                       "type": "text",
                       "name": "EUSMEQuestion5",
                       "title": {
-                        "de": "Funktion in der Einrichtung",
-                        "en": "Role in the organisation"
+                        "de": "Welche Funktion haben Sie im Unternehmen?",
+                        "en": "What is your role in the company?"
                       },
                       "isRequired": true
                     },
@@ -1724,8 +1724,8 @@ export const EUDmaJSON = {
                       "type": "text",
                       "name": "EUSMEQuestion6",
                       "title": {
-                        "de": "E-Mail-Adresse",
-                        "en": "Email address"
+                        "de": "Ihre E-Mail-Adresse.",
+                        "en": "Your email address."
                       },
                       "inputType": "email",
                       "isRequired": true
@@ -1734,11 +1734,11 @@ export const EUDmaJSON = {
                       "type": "text",
                       "name": "EUSMEQuestion7",
                       "title": {
-                        "de": "Telefonnummer",
-                        "en": "Telephone:"
+                        "de": "Ihre Telefonnummer.",
+                        "en": "Your Telephonenumber."
                       },
                       "inputType": "tel",
-                      "isRequired": true
+                      "isRequired": false
                     }
                   ],
                   "description": "Kontaktperson"
@@ -1747,8 +1747,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUSMEQuestion8",
                   "title": {
-                    "de": "Website",
-                    "en": "Website"
+                    "de": "Link zur Unternehmenswebsite.",
+                    "en": "Link to your company website."
                   },
                   "inputType": "url"
                 },
@@ -1756,8 +1756,8 @@ export const EUDmaJSON = {
                   "type": "text",
                   "name": "EUSMEQuestion9",
                   "title": {
-                    "de": "Jahr der Unternehmensgründung",
-                    "en": "Enterprise’s foundation year"
+                    "de": "Jahr der Unternehmensgründung (auch geschätzt).",
+                    "en": "Enterprise’s foundation year (also estimated)."
                   },
                   "isRequired": true,
                   "validators": [
@@ -1776,8 +1776,8 @@ export const EUDmaJSON = {
                   "name": "EUSMEQuestion10",
                   "isRequired": true,
                   "title": {
-                    "de": "Zahl der Beschäftigten der Einrichtung",
-                    "en": "Organisation’s staff size"
+                    "de": "Zahl der Beschäftigten der Einrichtung.",
+                    "en": "Organisation’s staff size."
                   },
                   "choices": [
                     {
@@ -1814,8 +1814,8 @@ export const EUDmaJSON = {
                   "type": "multipletext",
                   "name": "EUSMEQuestion11",
                   "title": {
-                    "de": "Vollständige Anschrift",
-                    "en": "Full address"
+                    "de": "Vollständige Anschrift.",
+                    "en": "Full address."
                   },
                   "isRequired": true,
                   "items": [
@@ -1867,8 +1867,8 @@ export const EUDmaJSON = {
                       "type": "dropdown",
                       "name": "EUSMEQuestion13",
                       "title": {
-                        "de": "Primär (eine Option obligatorisch)",
-                        "en": "Primary (one mandatory)"
+                        "de": "Primär (eine Option obligatorisch).",
+                        "en": "Primary (one mandatory)."
                       },
                       "choices": [
                         {
@@ -2047,8 +2047,8 @@ export const EUDmaJSON = {
                       "type": "dropdown",
                       "name": "EUSMEQuestion14",
                       "title": {
-                        "de": "Sekundär (eine Option fakultativ)",
-                        "en": "Secondary (one optional)"
+                        "de": "Sekundär (eine Option fakultativ).",
+                        "en": "Secondary (one optional)."
                       },
                       "choices": [
                         {
@@ -2350,8 +2350,8 @@ export const EUDmaJSON = {
                     }
                   ],
                   "title": {
-                    "de": "In welchem Sektor ist Ihr Unternehmen hauptsächlich tätig? Bitte wählen Sie eine Option aus",
-                    "en": "In which sector of activity is your enterprise’s business primarily focused? Please select one option"
+                    "de": "In welchem Sektor ist Ihr Unternehmen hauptsächlich tätig? Bitte wählen Sie eine Option aus.",
+                    "en": "In which sector of activity is your enterprise’s business primarily focused? Please select one option."
                   }
                 }
               ],
@@ -2419,8 +2419,12 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUSMEQuestion15",
               "title": {
-                "de": "In welchen der folgenden Geschäftsbereiche hat Ihr Unternehmen bereits in die Digitalisierung investiert und in welchen plant es (weiterhin) dies für die Zukunft? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "In which of the following business areas has your enterprise already invested in digitalisation and in which ones does it plan to (further) invest in the future?  Please select all options that apply"
+                "de": "In welchen der folgenden Geschäftsbereiche hat Ihr Unternehmen bereits in die Digitalisierung investiert und in welchen plant es dies (weiterhin) in Zukunft? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "In which of the following business areas has your enterprise already invested in digitalisation and in which ones does it plan to (further) invest in the future?  Please select all options that apply."
+              },
+              "description": {
+                "de": "Keine, eine oder zwei Kreuze pro Frage möglich.",
+                "en": "None, one, or two crosses per question possible."
               },
               "defaultValue": " ",
               "columns": [
@@ -2443,7 +2447,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Yes",
                   "text": {
-                    "de": "Ja"
+                    "de": "",
+                    "en": ""
                   }
                 }
               ],
@@ -2459,7 +2464,7 @@ export const EUDmaJSON = {
                 {
                   "value": "Row 2",
                   "text": {
-                    "de": "Projektplanung und management",
+                    "de": "Projektplanung und -management",
                     "en": "Project planning and management"
                   }
                 },
@@ -2525,8 +2530,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion16",
               "title": {
-                "de": "Welche Vorkehrungen wurden getroffen, um Ihr Unternehmen auf die (weitere) Digitalisierung vorzubereiten? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "In which of the following ways is your enterprise prepared for (more) digitalisation? Please select all options that apply"
+                "de": "Welche Vorkehrungen wurden getroffen, um Ihr Unternehmen auf die (weitere) Digitalisierung vorzubereiten? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "In which of the following ways is your enterprise prepared for (more) digitalisation? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -2624,8 +2629,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion17",
               "title": {
-                "de": "Welche der folgenden digitalen Technologien und Lösungen werden von Ihrem Unternehmen bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "Which of the following digital technologies and solutions are already used by your enterprise? Please select all options that apply"
+                "de": "Welche der folgenden digitalen Technologien und Lösungen werden von Ihrem Unternehmen bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "Which of the following digital technologies and solutions are already used by your enterprise? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -2707,8 +2712,8 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUSMEQuestion18",
               "title": {
-                "de": "Welche der folgenden fortgeschrittenen digitalen Technologien werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen anhand der vorgegebenen Skala aus",
-                "en": "Which of the following advanced digital technologies are already used by your organisation? Please choose all options that apply using the provided scale"
+                "de": "Welche der folgenden fortgeschrittenen digitalen Technologien werden von Ihrer Einrichtung bereits eingesetzt? Bitte wählen Sie alle zutreffenden Optionen anhand der vorgegebenen Skala aus.",
+                "en": "Which of the following advanced digital technologies are already used by your organisation? Please choose all options that apply using the provided scale."
               },
               "defaultValue": {
                 "Row 1": {
@@ -2862,8 +2867,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion19",
               "title": {
-                "de": "Was tut Ihr Unternehmen, um seine Mitarbeitenden für die Digitalisierung zu qualifizieren und weiterzubilden? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "What does your enterprise do to re-skill and up-skill its staff for digitalisation? Please select all options that apply"
+                "de": "Was tut Ihr Unternehmen, um seine Mitarbeitenden für die Digitalisierung zu qualifizieren und weiterzubilden? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "What does your enterprise do to re-skill and up-skill its staff for digitalisation? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -2924,8 +2929,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion20",
               "title": {
-                "de": "Wie kann Ihr Unternehmen bei Einführung neuer digitaler Lösungen seine Mitarbeitenden einbinden und befähigen? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "When adopting new digital solutions, how does your enterprise engage and empower its staff? Please select all options that apply"
+                "de": "Wie kann Ihr Unternehmen bei Einführung neuer digitaler Lösungen seine Mitarbeitenden einbinden und befähigen? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "When adopting new digital solutions, how does your enterprise engage and empower its staff? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -3009,8 +3014,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion21",
               "title": {
-                "de": "Wie werden Ihre Unternehmensdaten verwaltet (hinsichtlich Speicherung, Organisation, Zugriff und Nutzung)? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "How is your enterprise data managed (i.e. stored, organised, accessed and exploited)?  Please select all options that apply"
+                "de": "Wie werden Ihre Unternehmensdaten verwaltet (hinsichtlich Speicherung, Organisation, Zugriff und Nutzung)? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "How is your enterprise data managed (i.e. stored, organised, accessed and exploited)?  Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -3078,8 +3083,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion22",
               "title": {
-                "de": "Sind Ihre Unternehmensdaten ausreichend gesichert? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "Is your enterprise’s data sufficiently secured? Please select all options that apply"
+                "de": "Sind Ihre Unternehmensdaten ausreichend gesichert? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "Is your enterprise’s data sufficiently secured? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -3149,8 +3154,8 @@ export const EUDmaJSON = {
               "type": "matrixdropdown",
               "name": "EUSMEQuestion23",
               "title": {
-                "de": "Welche der folgenden Technologien und Geschäftsanwendungen nutzt Ihr Unternehmen bereits? Bitte bewerten Sie alle zutreffenden Optionen anhand der gegebenen Skala",
-                "en": "Which of the following technologies and business applications are your enterprise already using?  Please grade all options that apply the given scale"
+                "de": "Welche der folgenden Technologien und Geschäftsanwendungen nutzt Ihr Unternehmen bereits? Bitte bewerten Sie alle zutreffenden Optionen anhand der gegebenen Skala.",
+                "en": "Which of the following technologies and business applications are your enterprise already using?  Please grade all options that apply the given scale."
               },
               "defaultValue": {
                 "Row 1": {
@@ -3281,8 +3286,8 @@ export const EUDmaJSON = {
               "type": "checkbox",
               "name": "EUSMEQuestion24",
               "title": {
-                "de": "Wie nutzt Ihr Unternehmen die digitalen Technologien, um zur ökologischen Nachhaltigkeit beizutragen? Bitte wählen Sie alle zutreffenden Optionen aus",
-                "en": "How does your enterprise make use of digital technologies to contribute to environmental sustainability? Please select all options that apply"
+                "de": "Wie nutzt Ihr Unternehmen die digitalen Technologien, um zur ökologischen Nachhaltigkeit beizutragen? Bitte wählen Sie alle zutreffenden Optionen aus.",
+                "en": "How does your enterprise make use of digital technologies to contribute to environmental sustainability? Please select all options that apply."
               },
               "defaultValue": [
                 " "
@@ -3364,8 +3369,8 @@ export const EUDmaJSON = {
               "type": "matrix",
               "name": "EUSMEQuestion25",
               "title": {
-                "de": "Berücksichtigt Ihr Unternehmen bei seinen Digitalisierungsentscheidungen und digitalen Abläufen auch die Auswirkungen auf die Umwelt? Bitte bewerten Sie alle zutreffenden Optionen",
-                "en": "Is your enterprise taking into account environmental impacts in its digital choices and practices? Please grade all options that apply using this scale"
+                "de": "Berücksichtigt Ihr Unternehmen bei seinen Digitalisierungsentscheidungen und digitalen Abläufen auch die Auswirkungen auf die Umwelt? Bitte bewerten Sie alle zutreffenden Optionen.",
+                "en": "Is your enterprise taking into account environmental impacts in its digital choices and practices? Please grade all options that apply using this scale."
               },
               "defaultValue": {
                 "Row 1": "Column 1",
@@ -3401,7 +3406,7 @@ export const EUDmaJSON = {
                 {
                   "value": "Row 1",
                   "text": {
-                    "de": "Umweltbelange und standards sind in die Digitalstrategie der Einrichtung eingebettet",
+                    "de": "Umweltbelange und -standards sind in die Digitalstrategie der Einrichtung eingebettet",
                     "en": "Environmental concerns and standards are embedded in the organisation's digital strategy"
                   }
                 },
