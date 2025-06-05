@@ -10,7 +10,7 @@ const public_Key = import.meta.env.VITE_PUBLIC_KEY;
 export function createCSV(Answers: Ref<any>) {
     // crate json with mapping
     const header = Answers.value
-    const prefix = header.EUPSOQuestion1 ? 'EUPSO' : 'EUSME';
+    const prefix = header.EUPSOQuestion2 ? 'EUPSO' : 'EUSME';
 
     //transform date
     const now = new Date();
@@ -18,6 +18,8 @@ export function createCSV(Answers: Ref<any>) {
     const day = now.getDate().toString().padStart(2, "0");
     const year = now.getFullYear();
     const formattedDate = `${month}/${day}/${year}`;
+    const formattedDate2 = `${year}-${month}-${day}`;
+    const formattedDate3 = `${day}.${month}.${year}`;
 
     //function for 2 answers 1|1
     const questionCalc1 = (question: any, row: any) => {
@@ -348,7 +350,7 @@ export function createCSV(Answers: Ref<any>) {
     csvContent += "\n";
 
     // send results to the EDIH for EU-Upload
-    /*let PSOtypes = [
+    let PSOtypes = [
         "National authority",
         "Regional authority",
         "Province/municipal authority",
@@ -420,19 +422,19 @@ export function createCSV(Answers: Ref<any>) {
         "Transport & Mobility",
         "Transport sector",
         "Travel and tourism"
-    ];*/
+    ];
 
 
     let sendEDIHEmail = () => {
         const base64CSV = btoa(csvContent);
         let KPI_String = ""
-        /*if (prefix === "EUPSO") {
+        if (prefix === "EUPSO") {
             if (header.EUPSOQuestion14) { KPI_String = header.EUDMAQuestionPartner + ";" + header.EUPSOQuestion2 + ";" + header.EUPSOQuestion3 + ";" + "" + ";" + header.EUPSOQuestion4 + ";" + header.EUPSOQuestion5 + ";" + header.EUPSOQuestion6 + ";" + header.EUPSOQuestion7 + ";" + header.EUPSOQuestion8 + ";" + PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)] + ";" + PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)] + ";" + header.EUPSOQuestion11.text4 + ";" + header.EUPSOQuestion11.text3 + ";" + header.EUPSOQuestion11.text1 + ", " + header.EUPSOQuestion11.text2 + ", " + header.EUPSOQuestion11.text3 + ";" + PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)] + ";" + PSOsectors[parseInt(header.EUPSOQuestion14.slice(5).trim(), 10)] }
             else { KPI_String = header.EUDMAQuestionPartner + ";" + header.EUPSOQuestion2 + ";" + header.EUPSOQuestion3 + ";" + "" + ";" + header.EUPSOQuestion4 + ";" + header.EUPSOQuestion5 + ";" + header.EUPSOQuestion6 + ";" + header.EUPSOQuestion7 + ";" + header.EUPSOQuestion8 + ";" + PSOtypes[parseInt(header.EUPSOQuestion9.slice(5).trim(), 10)] + ";" + PSOsize[parseInt(header.EUPSOQuestion10.slice(5).trim(), 10)] + ";" + header.EUPSOQuestion11.text4 + ";" + header.EUPSOQuestion11.text3 + ";" + header.EUPSOQuestion11.text1 + ", " + header.EUPSOQuestion11.text2 + ", " + header.EUPSOQuestion11.text3 + ";" + PSOsectors[parseInt(header.EUPSOQuestion13.slice(5).trim(), 10)] }
         } else {
             if (header.EUSMEQuestion14) { KPI_String = header.EUDMAQuestionPartner + ";" + header.EUSMEQuestion2 + ";" + "" + ";" + header.EUSMEQuestion3 + ";" + "" + ";" + header.EUSMEQuestion4 + ";" + header.EUSMEQuestion5 + ";" + header.EUSMEQuestion6 + ";" + header.EUSMEQuestion7 + ";" + header.EUSMEQuestion8 + ";" + SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)] + ";" + header.EUSMEQuestion9 + ";" + header.EUSMEQuestion11.text4 + ";" + header.EUSMEQuestion11.text3 + ";" + header.EUSMEQuestion11.text1 + ", " + header.EUSMEQuestion11.text2 + ", " + header.EUSMEQuestion11.text3 + ";" + SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)] + ";" + SMEsectors[parseInt(header.EUSMEQuestion14.slice(5).trim(), 10)] }
             else { KPI_String = header.EUDMAQuestionPartner + ";" + header.EUSMEQuestion2 + ";" + "" + ";" + header.EUSMEQuestion3 + ";" + "" + ";" + header.EUSMEQuestion4 + ";" + header.EUSMEQuestion5 + ";" + header.EUSMEQuestion6 + ";" + header.EUSMEQuestion7 + ";" + header.EUSMEQuestion8 + ";" + SMEsize[parseInt(header.EUSMEQuestion10.slice(5).trim(), 10)] + ";" + header.EUSMEQuestion9 + ";" + header.EUSMEQuestion11.text4 + ";" + header.EUSMEQuestion11.text3 + ";" + header.EUSMEQuestion11.text1 + ", " + header.EUSMEQuestion11.text2 + ", " + header.EUSMEQuestion11.text3 + ";" + SMEsectors[parseInt(header.EUSMEQuestion13.slice(5).trim(), 10)] }
-        }*/
+        }
 
         const templateParams1 = {
             customer_name: header[`${prefix}Question2`],
@@ -440,17 +442,17 @@ export function createCSV(Answers: Ref<any>) {
             customer_partner: header.EUDMAQuestionPartner,
             customer_contact: header[`${prefix}Question4`],
             customer_mail: header[`${prefix}Question6`],
-            dma_date: header[`${prefix}Question1`],
+            dma_date: formattedDate3,
             KPI_reporting: KPI_String,
             dma_results: base64CSV,
-            filename: header[`${prefix}Question1`] + '_EDIH-TH_DMA_' + header[`${prefix}Question2`]
+            filename: formattedDate2 + '_EDIH-Thuringia_'+(prefix === "EUPSO" ? 'PSO' : 'SME')+'-DMA_' + header[`${prefix}Question2`]
         };
 
         emailjs.send(service_Id_EDIH, template_Id_EDIH, templateParams1, { publicKey: public_Key })
             .then((response: any) => {
-                console.log('Email sent successfully!', response.status, response.text);
+                console.log('EDIH-Email sent successfully!', response.status, response.text);
             }, (error: any) => {
-                console.error('Failed to send email:', error);
+                console.error('Failed to send EDIH-Email:', error);
             });
     }
     sendEDIHEmail();
@@ -465,9 +467,9 @@ export function createCSV(Answers: Ref<any>) {
 
         emailjs.send(service_Id, template_Id, templateParams2, { publicKey: public_Key })
             .then((response: any) => {
-                console.log('Email sent successfully!', response.status, response.text);
+                console.log('Customer-Email sent successfully!', response.status, response.text);
             }, (error: any) => {
-                console.error('Failed to send email:', error);
+                console.error('Failed to send Customer-Email:', error);
             });
     }
     sendCustomerEmail();
