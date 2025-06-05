@@ -1606,8 +1606,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Column 3",
                   "text": {
-                    "de": "",
-                    "en": ""
+                    "de": "Ja",
+                    "en": "Yes"
                   }
                 }
               ],
@@ -3399,8 +3399,8 @@ export const EUDmaJSON = {
                 {
                   "value": "Column 3",
                   "text": {
-                    "de": "",
-                    "en": ""
+                    "de": "Ja",
+                    "en": "Yes"
                   }
                 }
               ],
