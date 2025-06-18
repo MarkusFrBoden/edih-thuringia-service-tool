@@ -1,27 +1,5 @@
 {
     "Header": {
-        "title": "EU-Digitalcheck"
-    },
-    "EuResultsComp": {
-        "overview": "Dimensionsübersicht",
-        "dimension1": "Digitale Strategie und Investitionen",
-        "dimension2": "Bereitschaft für den digitalen Wandel",
-        "dimension3": "Auf den Menschen ausgerichtete Digitalisierung",
-        "dimension4": "Datenverwaltung und -sicherheit",
-        "dimension5": "Interoperabilität",
-        "dimension6": "Grüne Digitalisierung"
-    },
-    "Results": {
-        "text": "Für einen EU-weiten Benchmark und die weitere Zusammenarbeit mit dem EDIH Thuringia, senden Sie uns Ihre Ergebnisse und wir setzen uns mit Ihnen in Verbindung.",
-        "button": "Ihre Daten an das EDIH senden"
-    },
-    "Labels": {
-        "l0": "Ergebnis",
-        "l1": "Digitale Strategie und Investitionen",
-        "l2": "Bereitschaft für den digitalen Wandel",
-        "l3": "Auf den Menschen ausgerichtete Digitalisierung",
-        "l4": "Datenverwaltung und -sicherheit",
-        "l5": "Interoperabilität",
-        "l6": "Grüne Digitalisierung"
+        "title": "EDIH-Thuringia Servicetool"
     }
 }

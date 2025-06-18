@@ -42,33 +42,10 @@
     <div>
 
       <div v-if="!showResults">
-        <Survey @surveyCompleted="handleDmaCompleted" :survey="EUDmaJSON" surveyMode="edit" />
+        <Survey @surveyCompleted="handleDmaCompleted" :survey="ServiceQuestions" surveyMode="edit" />
       </div>
 
-      <div v-else-if="EuResults && radarChartDataValues && doughnutChartDataValues">
-
-        <div class="content">
-          <div>
-            <h5>{{ $t('Results.text') }}</h5>
-          </div>
-          <div v-if="showSendButton">
-            <button class="btn btn-outline-secondary" @click="sendCSV">
-              {{ $t('Results.button') }}
-            </button>
-          </div>
-
-          <div v-if="showingBalloons" class="overlay">
-            <Celebration />
-          </div>
-        </div>
-
-        <div>
-          <Results :EuResults="EuResults" :radarChartDataValues="radarChartDataValues"
-            :doughnutChartDataValues="doughnutChartDataValues" />
-        </div>
-
       </div>
-    </div>
   </body>
 
 </template>
@@ -77,12 +54,8 @@
 import Survey from './components/Survey.vue';
 import Results from './components/Results.vue';
 import Celebration from './components/Celebration.vue';
-import { EUDmaJSON } from "./assets/EUDma_json";
+import { ServiceQuestions } from "./assets/ServiceQuestions_json";
 import { inject, Ref, ref } from 'vue';
-import { EuResult } from './interfaces/EuResults';
-import { doughnutChartData } from './interfaces/doughnutChartData';
-import { radarChartData } from './interfaces/radarChartData';
-import { EUcalculation } from "./components/functions/EuResultsCalulation";
 import { createCSV } from "./components/functions/createCSV";
 import BrightnessHigh from './components/icons/BrightnessHigh.vue';
 import BoxWithRightArrowOut from './components/icons/BoxWithRightArrowOut.vue';
@@ -94,20 +67,11 @@ const darkmode: Ref<boolean> = inject('darkmode') || ref(false);
 let showResults = ref(false);
 let showSendButton = ref(true);
 let showingBalloons = ref(false);
-let Answers = ref<EuResult>();
+let Answers = ref();
 
 const handleDmaCompleted = (answers: any) => {
   Answers.value = answers;
-  ResultCalculation();
-}
-
-//answer calculation
-let EuResults = ref<EuResult>();
-let doughnutChartDataValues = ref<Array<doughnutChartData>>([]);
-let radarChartDataValues = ref<radarChartData>();
-const ResultCalculation = () => {
-  EUcalculation(Answers, doughnutChartDataValues, radarChartDataValues, EuResults);
-  showResults.value = true;
+  sendCSV();
 }
 
 //enable csv download
