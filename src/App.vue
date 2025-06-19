@@ -95,12 +95,6 @@ const handleDmaCompleted = (answers: any) => {
 }, 3000);
 };
 
-//enable csv download
-const sendCSV = () => {
-  createCSV(Answers);
-  showSendButton.value = false;
-};
-
 //Celebration Animation
 const celebrate = () => {
   showingBalloons.value = true;
