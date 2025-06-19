@@ -1,5 +1,5 @@
 export const ServiceQuestions = {
-  "title": "EDIH-Thuringia Service-Anfrage",
+  "title": "Einreichen eines neuen Services",
   "description": "Wenn du einen neuen Service auf dem Marktplatz anlegen willst, dann bist du hier genau richtig. Fülle die entsprechenden Felder aus und das Koordinationsteam kümmert sich um die weitere Verwaltung. Du bekommst eine Meldung wenn der Kurs auf Moodle mit den von dir erhaltenen Informationen angelegt wurde und von dir weiter befüllt werden kann.",
   "completedHtml": {
     "de": "<h3>Vielen Dank für das Zusenden des neuen Services!</h3>",
@@ -15,23 +15,19 @@ export const ServiceQuestions = {
           "type": "dropdown",
           "name": "question1",
           "title": "Service-Kategorie",
-          "isRequired": true,
+          "isRequired": false,
           "choices": [
             {
-              "value": "Item 1",
-              "text": "Lernen"
+              "value": "Lernen"
             },
             {
-              "value": "Item 2",
-              "text": "Testen"
+              "value": "Testen"
             },
             {
-              "value": "Item 3",
-              "text": "Investieren"
+              "value": "Investieren"
             },
             {
-              "value": "Item 4",
-              "text": "Vernetzen"
+              "value": "Vernetzen"
             }
           ]
         },
@@ -41,16 +37,13 @@ export const ServiceQuestions = {
           "title": "KI-Level",
           "choices": [
             {
-              "value": "Item 1",
-              "text": "KI-Readiness"
+              "value": "KI-Readiness"
             },
             {
-              "value": "Item 2",
-              "text": "KI-Application"
+              "value": "KI-Application"
             },
             {
-              "value": "Item 3",
-              "text": "KI-Innovation"
+              "value": "KI-Innovation"
             }
           ]
         },
@@ -58,46 +51,14 @@ export const ServiceQuestions = {
           "type": "text",
           "name": "question3",
           "title": "Service Bezeichnung",
-          "isRequired": true
+          "isRequired": false
         },
         {
           "type": "dropdown",
           "name": "question4",
           "title": "Hauptanbieter",
-          "isRequired": true,
-          "choices": [
-            "WBA",
-            "WLA",
-            {
-              "value": "Item 1",
-              "text": "HIGHQ"
-            },
-            {
-              "value": "Item 2",
-              "text": "NTAG"
-            },
-            {
-              "value": "Item 4",
-              "text": "BPV"
-            },
-            {
-              "value": "Item 5",
-              "text": "BMO"
-            },
-            {
-              "value": "Item 6",
-              "text": "THIMO"
-            },
-            {
-              "value": "Item 7",
-              "text": "TZLR"
-            }
-          ]
-        },
-        {
-          "type": "dropdown",
-          "name": "question5",
-          "title": "weitere Anbieter",
+          "isRequired": false,
+          "showOtherItem": true,
           "choices": [
             "BMO",
             "BPV",
@@ -110,10 +71,32 @@ export const ServiceQuestions = {
           ]
         },
         {
-          "type": "tagbox",
+          "type": "dropdown",
+          "name": "question5",
+          "title": "weitere Anbieter",
+          "showOtherItem": true,
+          "choices": [
+            "BMO",
+            "BPV",
+            "HIGHQ",
+            "NTAG",
+            "THIMO",
+            "TZLR",
+            "WBA",
+            "WLA"
+          ]
+        },
+        {
+          "type": "text",
           "name": "question6",
+          "title": "Ansprechpartner (Vor- & Nachname)",
+          "isRequired": false
+        },
+        {
+          "type": "tagbox",
+          "name": "question7",
           "title": "Zielgruppe (Sektoren)",
-          "isRequired": true,
+          "isRequired": false,
           "choices": [
             "Luftfahrt",
             "Agrarbiotechnologie und Lebensmittelbiotechnologie",
@@ -162,9 +145,9 @@ export const ServiceQuestions = {
         },
         {
           "type": "tagbox",
-          "name": "question7",
+          "name": "question8",
           "title": "Technologien (genutzt/vermittelt)",
-          "isRequired": true,
+          "isRequired": false,
           "choices": [
             "Additive Fertigung",
             "Künstliche Intelligenz & Entscheidungsunterstützung",
@@ -204,16 +187,16 @@ export const ServiceQuestions = {
         },
         {
           "type": "text",
-          "name": "question8",
+          "name": "question9",
           "title": "Kostenschätzung in € ",
-          "description": "(Abschätzung je Service/Kunde) - wird nur intern genutzt!",
+          "description": "(Abschätzung je Service/Kunde) - wird nur intern genutzt.",
           "inputType": "number"
         },
         {
           "type": "text",
-          "name": "question9",
+          "name": "question10",
           "title": "Preisindikation in € ",
-          "description": "(Abschätzung was der Kurs am Ende ca. Kosten soll) - wird nur intern genutzt!",
+          "description": "(Abschätzung was der Kurs am Ende ca. Kosten soll) - wird nur intern genutzt.",
           "inputType": "number"
         }
       ]
@@ -224,35 +207,40 @@ export const ServiceQuestions = {
       "description": "Gib die Grundinformationen an die wir für das Anlegen des Kurses benötigen. Diese Informationen sollten sich für die Außendarstellung zum Kunden eignen.",
       "elements": [
         {
-          "type": "comment",
-          "name": "question10",
-          "title": "Leistungen und Mehrwerte",
-          "isRequired": true
+          "type": "html",
+          "name": "beispieldatei_info",
+          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='public/Service2019-Example.pdf' download>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten' herunterladen (PDF)</a>"
         },
         {
           "type": "comment",
           "name": "question11",
-          "title": "Dauer, Datum, Veranstaltungsort (auch Online/Präsenz)",
-          "isRequired": true
+          "title": "Leistungen und Mehrwerte",
+          "isRequired": false
         },
         {
           "type": "comment",
           "name": "question12",
-          "title": "Zielgruppe und Voraussetzungen ",
-          "isRequired": true
+          "title": "Dauer, Datum, Veranstaltungsort (auch Online/Präsenz)",
+          "isRequired": false
         },
         {
           "type": "comment",
           "name": "question13",
-          "title": "Konditionen und Vorteile",
-          "description": "Für externe Kunden!",
-          "isRequired": true
+          "title": "Zielgruppe und Voraussetzungen ",
+          "isRequired": false
         },
         {
           "type": "comment",
           "name": "question14",
+          "title": "Konditionen und Vorteile",
+          "description": "Für externe Kunden beschreiben.",
+          "isRequired": false
+        },
+        {
+          "type": "comment",
+          "name": "question15",
           "title": "Buchungsoptionen und -informationen",
-          "isRequired": true
+          "isRequired": false
         }
       ]
     }

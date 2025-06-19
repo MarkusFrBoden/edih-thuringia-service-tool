@@ -41,9 +41,12 @@
   <body>
     <div>
 
-      <div v-if="!showResults">
-        <Survey @surveyCompleted="handleDmaCompleted" :survey="ServiceQuestions" surveyMode="edit" />
+      <div v-if="!showStart">
+        <Survey :survey="surveyJson" :key="surveyKey" surveyMode="edit" @surveyCompleted="handleDmaCompleted" />
       </div>
+      <div v-if="showingBalloons" class="overlay">
+            <Celebration />
+        </div>
 
       </div>
   </body>
@@ -52,7 +55,7 @@
 
 <script setup lang="ts">
 import Survey from './components/Survey.vue';
-import Results from './components/Results.vue';
+//import Results from './components/Results.vue';
 import Celebration from './components/Celebration.vue';
 import { ServiceQuestions } from "./assets/ServiceQuestions_json";
 import { inject, Ref, ref } from 'vue';
@@ -64,22 +67,38 @@ import BoxWithRightArrowOut from './components/icons/BoxWithRightArrowOut.vue';
 const darkmode: Ref<boolean> = inject('darkmode') || ref(false);
 
 //DMA-Questions
-let showResults = ref(false);
+let showStart = ref(false);
 let showSendButton = ref(true);
 let showingBalloons = ref(false);
 let Answers = ref();
 
+
+const surveyJson = ref(ServiceQuestions); // als Referenz
+const surveyKey = ref(0); // Schlüssel zum Erzwingen von Neu-Render
+
+const resetSurvey = () => {
+  surveyKey.value += 1; // erzwingt Neu-Render des SurveyComponents
+};
+
 const handleDmaCompleted = (answers: any) => {
   Answers.value = answers;
-  sendCSV();
-}
+  console.log(answers);
+  createCSV(Answers);
+  celebrate();
+
+  // Nach 3 Sekunden Survey zurücksetzen
+  setTimeout(() => {
+  resetSurvey(); // ersetzt den Survey durch eine neue Instanz
+  Answers.value = null;
+  showSendButton.value = true;
+  showStart.value = false;
+}, 3000);
+};
 
 //enable csv download
 const sendCSV = () => {
   createCSV(Answers);
   showSendButton.value = false;
-  // Animation 
-  celebrate()
 };
 
 //Celebration Animation
