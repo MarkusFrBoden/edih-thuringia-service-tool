@@ -64,11 +64,6 @@ watch(
 </script>
 
 <style>
-/* 1. Hintergrundfarbe nur für Header */
-.sv-header,
-.sv-header__background-color--accent {
-  background-color: #E7F0FF;
-}
 
 .sv-tagbox__item{background-color:rgb(165 193 235)}
 
@@ -104,6 +99,12 @@ watch(
 .sv-string-viewer--multiline {
   color: #003366 !important;
 }
+
+.dark .sv-string-viewer,
+.dark .sv-string-viewer--multiline {
+  color: #a6c8e7 !important;
+}
+
 
 /* 7. Zentrale Container dehnen (SurveyJS-Umgebung) */
 .sd-body,
@@ -169,4 +170,11 @@ watch(
   --sjs-general-backcolor: #E7F0FF !important;
   --sjs-header-background-color: #E7F0FF !important;
 }
+
+.dark .sv-header {
+  background-color: #212533 !important;
+  --sjs-general-backcolor: #212533 !important;
+  --sjs-header-background-color: #212533 !important;
+}
+
 </style>
