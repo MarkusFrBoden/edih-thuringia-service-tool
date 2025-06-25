@@ -209,7 +209,7 @@ export const ServiceQuestions = {
         {
           "type": "html",
           "name": "beispieldatei_info",
-          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='public/Service2019-Example.pdf' download>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten' herunterladen (PDF)</a>"
+          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='https://edih-thuringia-service-tool.vercel.app/Service2019-Example.pdf' target='_blank'>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten' herunterladen (PDF)</a>"
         },
         {
           "type": "comment",
