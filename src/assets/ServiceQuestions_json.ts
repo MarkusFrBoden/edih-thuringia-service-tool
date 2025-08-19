@@ -89,7 +89,7 @@ export const ServiceQuestions = {
         {
           "type": "text",
           "name": "question6",
-          "title": "Ansprechpartner (Vor- & Nachname)",
+          "title": "Ansprechpartner/Trainer (Vor- & Nachname)",
           "isRequired": false
         },
         {
@@ -198,6 +198,33 @@ export const ServiceQuestions = {
           "title": "Preisindikation in € ",
           "description": "(Abschätzung was der Kurs am Ende ca. Kosten soll) - wird nur intern genutzt.",
           "inputType": "number"
+        },
+        {
+          "type": "tagbox",
+          "name": "questionZ1",
+          "title": "Serviceformat",
+          "choices": [
+            "Workshopreihe",
+            "Weiterbildung",
+            "Einzelworkshop",
+            "Beratung",
+            "Test before invest",
+            "Live-Demonstration"
+          ],
+          "isRequired": false,
+          "showOtherItem": true,
+        },
+        {
+          "type": "tagbox",
+          "name": "questionZ2",
+          "title": "Serviceabschluss",
+          "choices": [
+            "Zertifikat",
+            "Teilnahmebestätigung",
+            "Auszeichnung"
+          ],
+          "isRequired": false,
+          "showOtherItem": true,
         }
       ]
     },
@@ -209,7 +236,13 @@ export const ServiceQuestions = {
         {
           "type": "html",
           "name": "beispieldatei_info",
-          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='https://edih-thuringia-service-tool.vercel.app/Service2019-Example.pdf' target='_blank'>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten' herunterladen (PDF)</a>"
+          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='https://edih-thuringia-service-tool.vercel.app/Service2019-Example.pdf' target='_blank'>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten'</a><br><br><p>Bitte Nutzen Sie für Stichpunkte wie im Beispielservice das folgende Zeichen:  • </p>"
+        },
+        {
+          "type": "comment",
+          "name": "questionZ3",
+          "title": "Allgemeine Servicebeschreibung (in Fließtext)",
+          "isRequired": false
         },
         {
           "type": "comment",
@@ -233,7 +266,7 @@ export const ServiceQuestions = {
           "type": "comment",
           "name": "question14",
           "title": "Konditionen und Vorteile",
-          "description": "Für externe Kunden beschreiben.",
+          "description": "Für Kunden beschreiben.",
           "isRequired": false
         },
         {
