@@ -1,63 +1,28 @@
 export const ServiceQuestions = {
   "title": "Einreichen eines neuen Services",
-  "description": "Wenn du einen neuen Service auf dem Marktplatz anlegen willst, dann bist du hier genau richtig. Fülle die entsprechenden Felder aus und das Koordinationsteam kümmert sich um die weitere Verwaltung. Du bekommst eine Meldung wenn der Kurs auf Moodle mit den von dir erhaltenen Informationen angelegt wurde und von dir weiter befüllt werden kann.",
+  "description": "Wenn du einen neuen Service auf dem Marktplatz anlegen willst, dann bist du hier genau richtig. Fülle die entsprechenden Felder aus und das Koordinationsteam kümmert sich um die weitere Verwaltung. Du bekommst eine Meldung wenn der Kurs auf Moodle mit den von dir erhaltenen Informationen angelegt wurde und von dir ausgestaltet werden kann.",
   "completedHtml": {
     "de": "<h3>Vielen Dank für das Zusenden des neuen Services!</h3>",
     "en": "<h3>Thank you for sending in the new service</h3>"
-  },  
+  },
   "pages": [
     {
       "name": "page1",
       "title": "Allgemeine Angaben",
-      "description": "Zunächst ein paar allgemeine Angaben für das Service-Reporting zur EU. Diese Informationen werden lediglich für interne Zwecke genutzt.",
+      "description": "Zunächst ein paar allgemeine Angaben zum Service.",
       "elements": [
-        {
-          "type": "dropdown",
-          "name": "question1",
-          "title": "Service-Kategorie",
-          "isRequired": false,
-          "choices": [
-            {
-              "value": "Lernen"
-            },
-            {
-              "value": "Testen"
-            },
-            {
-              "value": "Investieren"
-            },
-            {
-              "value": "Vernetzen"
-            }
-          ]
-        },
-        {
-          "type": "dropdown",
-          "name": "question2",
-          "title": "KI-Level",
-          "choices": [
-            {
-              "value": "KI-Readiness"
-            },
-            {
-              "value": "KI-Application"
-            },
-            {
-              "value": "KI-Innovation"
-            }
-          ]
-        },
+
         {
           "type": "text",
           "name": "question3",
           "title": "Service Bezeichnung",
-          "isRequired": false
+          "isRequired": true
         },
         {
           "type": "dropdown",
           "name": "question4",
           "title": "Hauptanbieter",
-          "isRequired": false,
+          "isRequired": true,
           "showOtherItem": true,
           "choices": [
             "BMO",
@@ -87,16 +52,127 @@ export const ServiceQuestions = {
           ]
         },
         {
-          "type": "text",
+          "type": "comment",
           "name": "question6",
-          "title": "Ansprechpartner/Trainer (Vor- & Nachname)",
+          "title": "Ansprechpartner/Trainer (Vor- & Nachname, Email-Adresse)",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "question1",
+          "title": "Service-Kategorie",
+          "description": "Für die Einordnung nach Service-Kategorien auf dem EDIH Thuringia Marktplatz.",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Lernen"
+            },
+            {
+              "value": "Testen"
+            },
+            {
+              "value": "Investieren"
+            },
+            {
+              "value": "Vernetzen"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "question2",
+          "title": "KI-Level",
+          "description": "Für die zukünftige Einordnung nach KI-Leveln auf dem EDIH Thuringia Marktplatz (Readiness = Grundlegende Digitalisierung, welche die Grundlagen für KI bildet | Application = Nutzung von KI-Anwendungen im Rahmen des Services | Innovation = Forschung & Entwicklung neuer Anwendungen auf Basis von KI)",
+          "choices": [
+            {
+              "value": "KI-Readiness"
+            },
+            {
+              "value": "KI-Application"
+            },
+            {
+              "value": "KI-Innovation"
+            }
+          ], "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "questionZ1",
+          "title": "Serviceformat",
+
+          "choices": [
+            "Workshopreihe",
+            "Weiterbildung",
+            "Einzelworkshop",
+            "Beratung",
+            "Test before invest",
+            "Live-Demonstration"
+          ],
+          "isRequired": true,
+          "showOtherItem": true,
+        },
+        {
+          "type": "text",
+          "name": "questionZ4",
+          "title": "Zeitraum",
+          "description": "Informationen zum geplanten Start/Ende sowie die mögliche Anzahl an Terminen.",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "questionZ5",
+          "title": "Dauer",
+          "description": "Informationen zur geplanten Dauer der einzelnen Termine. Bei Beratungsservices auch 'Individuell' möglich.",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "question9",
+          "title": "Kostenschätzung in € ",
+          "description": "Abschätzung des eigenen Aufwandes je Kunde pro Service (wird nur intern genutzt).",
+          "inputType": "number",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "question10",
+          "title": "Preisindikation in € ",
+          "description": "Abschätzung des Endpreises für den Kunden (inlusive EU-Rabatt).",
+          "inputType": "number",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "questionz6",
+          "title": "Ort",
+          "description": "Adresse angeben oder 'Online' eintragen",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "questionZ2",
+          "title": "Serviceabschluss",
+          "choices": [
+            "Zertifikat",
+            "Teilnahmebestätigung",
+            "Auszeichnung"
+          ],
+          "isRequired": true,
+          "showOtherItem": true,
+        },
+        {
+          "type": "text",
+          "name": "question15",
+          "title": "Buchungsoptionen und -informationen",
+          "description": "Link zu eigenem Buchungsportal oder Angabe 'Buchung über Marktplatz'.",
           "isRequired": false
         },
         {
           "type": "tagbox",
           "name": "question7",
-          "title": "Zielgruppe (Sektoren)",
-          "isRequired": false,
+          "title": "Sektoren",
+          "isRequired": true,
+          "description": "Auswahl der wichtigsten betroffenen Sektoren nach EU-Definition.",
           "choices": [
             "Luftfahrt",
             "Agrarbiotechnologie und Lebensmittelbiotechnologie",
@@ -146,8 +222,9 @@ export const ServiceQuestions = {
         {
           "type": "tagbox",
           "name": "question8",
-          "title": "Technologien (genutzt/vermittelt)",
-          "isRequired": false,
+          "title": "Technologien",
+          "isRequired": true,
+          "description": "Auswahl der wichtigsten genutzen Technologien nach EU-Definition.",
           "choices": [
             "Additive Fertigung",
             "Künstliche Intelligenz & Entscheidungsunterstützung",
@@ -184,96 +261,35 @@ export const ServiceQuestions = {
             "Softwarearchitekturen",
             "Virtuelle Realität"
           ]
-        },
-        {
-          "type": "text",
-          "name": "question9",
-          "title": "Kostenschätzung in € ",
-          "description": "(Abschätzung je Service/Kunde) - wird nur intern genutzt.",
-          "inputType": "number"
-        },
-        {
-          "type": "text",
-          "name": "question10",
-          "title": "Preisindikation in € ",
-          "description": "(Abschätzung was der Kurs am Ende ca. Kosten soll) - wird nur intern genutzt.",
-          "inputType": "number"
-        },
-        {
-          "type": "tagbox",
-          "name": "questionZ1",
-          "title": "Serviceformat",
-          "choices": [
-            "Workshopreihe",
-            "Weiterbildung",
-            "Einzelworkshop",
-            "Beratung",
-            "Test before invest",
-            "Live-Demonstration"
-          ],
-          "isRequired": false,
-          "showOtherItem": true,
-        },
-        {
-          "type": "tagbox",
-          "name": "questionZ2",
-          "title": "Serviceabschluss",
-          "choices": [
-            "Zertifikat",
-            "Teilnahmebestätigung",
-            "Auszeichnung"
-          ],
-          "isRequired": false,
-          "showOtherItem": true,
         }
+
       ]
     },
     {
       "name": "page2",
       "title": "Kursinformationen",
-      "description": "Gib die Grundinformationen an die wir für das Anlegen des Kurses benötigen. Diese Informationen sollten sich für die Außendarstellung zum Kunden eignen.",
+      "description": "Gib die Grundinformationen an, die wir für das Anlegen des Services benötigen. Diese Informationen sollten sich für die Außendarstellung zum Kunden eignen.",
       "elements": [
-        {
-          "type": "html",
-          "name": "beispieldatei_info",
-          "html": "<p>Für ein Beispiel, nutze diese Datei als Vorlage:</p> <a href='https://edih-thuringia-service-tool.vercel.app/Service2019-Example.pdf' target='_blank'>📄 Beispielservice 'Vertiefung: Offene Mobilitätsdaten'</a><br><br><p>Bitte Nutzen Sie für Stichpunkte wie im Beispielservice das folgende Zeichen:  • </p>"
-        },
         {
           "type": "comment",
           "name": "questionZ3",
-          "title": "Allgemeine Servicebeschreibung (in Fließtext)",
-          "isRequired": false
+          "title": "Allgemeine Servicebeschreibung",
+          "description": "Möglichst ansprechende Beschreibung des Serviceinhaltes in 5-10 Sätzen als Einführung für die Kunden.",
+          "isRequired": true
         },
         {
           "type": "comment",
           "name": "question11",
           "title": "Leistungen und Mehrwerte",
-          "isRequired": false
-        },
-        {
-          "type": "comment",
-          "name": "question12",
-          "title": "Dauer, Datum, Veranstaltungsort (auch Online/Präsenz)",
-          "isRequired": false
+          "description": "Aufzählung der konkreten Lerninhalte in 3-5 Stichpunkten.",
+          "isRequired": true
         },
         {
           "type": "comment",
           "name": "question13",
           "title": "Zielgruppe und Voraussetzungen ",
-          "isRequired": false
-        },
-        {
-          "type": "comment",
-          "name": "question14",
-          "title": "Konditionen und Vorteile",
-          "description": "Für Kunden beschreiben.",
-          "isRequired": false
-        },
-        {
-          "type": "comment",
-          "name": "question15",
-          "title": "Buchungsoptionen und -informationen",
-          "isRequired": false
+          "description": "Aufzählung der konkreten Zielgruppe und Teilnahmevorraussetzungen in 3-5 Stichpunkten.",
+          "isRequired": true
         }
       ]
     }
