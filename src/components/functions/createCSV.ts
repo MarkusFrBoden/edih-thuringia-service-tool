@@ -17,11 +17,13 @@ const excelColumns = [
   "Konditionen+Vorteile", "Konditionen+Vorteile_EN",
   "Buchung", "Buchung_EN",
   "Kontakt-Name", "Kontakt-Mail", "Kontakt-Telefon", "Kontakt-Weiteres",
-  "Kurs-Link","Zusatz-Format","Zusatz-Abschluss","Zusatz-AllgemeineBeschreibung"
+  "Kurs-Link","Zusatz-Service-Kategorie","Zusatz-KI-Level","Zusatz-Format","Zusatz-Abschluss","Zusatz-AllgemeineBeschreibung","Zusatz-Zeitraum","Zusatz-Dauer","Zusatz-Ort"
 ];
 
 // Zuordnung von Fragen zu Excel-Spalten
 const mapping: Record<string, string> = {
+  question1: "Zusatz-Service-Kategorie",
+  question2: "Zusatz-KI-Level",
   question3: "Name",
   question4: "Hauptanbieter",
   question5: "Weitere Anbieter",
@@ -33,11 +35,13 @@ const mapping: Record<string, string> = {
   question11: "Leistungen+Mehrwerte",
   question12: "Zeitliche/örtliche Daten",
   question13: "Zielgruppe+Voraussetzungen",
-  question14: "Konditionen+Vorteile",
-  question15: "Buchung",
+  question14: "Buchung",
   questionZ1: "Zusatz-Format",
   questionZ2: "Zusatz-Abschluss",
-  questionZ3: "Zusatz-AllgemeineBeschreibung"
+  questionZ3: "Zusatz-AllgemeineBeschreibung",
+  questionZ4: "Zusatz-Zeitraum",
+  questionZ5: "Zusatz-Dauer",
+  questionZ6: "Zusatz-Ort"
 };
 
 // Hilfsfunktion für Excel-konforme Formatierung

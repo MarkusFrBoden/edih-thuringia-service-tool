@@ -143,7 +143,7 @@ export const ServiceQuestions = {
         },
         {
           "type": "text",
-          "name": "questionz6",
+          "name": "questionZ6",
           "title": "Ort",
           "description": "Adresse angeben oder 'Online' eintragen",
           "isRequired": true
@@ -162,7 +162,7 @@ export const ServiceQuestions = {
         },
         {
           "type": "text",
-          "name": "question15",
+          "name": "question14",
           "title": "Buchungsoptionen und -informationen",
           "description": "Link zu eigenem Buchungsportal oder Angabe 'Buchung über Marktplatz'.",
           "isRequired": false
