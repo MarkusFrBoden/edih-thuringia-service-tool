@@ -7,41 +7,30 @@ const template_Id_EDIH = import.meta.env.VITE_TEMPLATE_ID_EDIH;
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
 // Reihenfolge der Spalten in der Excel-Datei
-const excelColumns = [
-  "ID", "Name", "Name_EN", "Hauptanbieter", "Weitere Anbieter",
-  "Sektor(en)", "Sektor_EN", "Technologien", "Tech_EN", "Stand",
-  "Kostenschätzung (je Service/Kunde)", "Preisindikation SME", "Preisindikation PSO",
-  "Leistungen+Mehrwerte", "Leistungen+Mehrwerte_EN",
-  "Zeitliche/örtliche Daten", "Zeitliche/örtliche Daten_EN",
-  "Zielgruppe+Voraussetzungen", "Zielgruppe+Voraussetzungen_EN",
-  "Konditionen+Vorteile", "Konditionen+Vorteile_EN",
-  "Buchung", "Buchung_EN",
-  "Kontakt-Name", "Kontakt-Mail", "Kontakt-Telefon", "Kontakt-Weiteres",
-  "Kurs-Link","Zusatz-Service-Kategorie","Zusatz-KI-Level","Zusatz-Format","Zusatz-Abschluss","Zusatz-AllgemeineBeschreibung","Zusatz-Zeitraum","Zusatz-Dauer","Zusatz-Ort"
-];
+const excelColumns = ["ServiceID","Servicebereich","Servicename","Hauptanbieter","Weitere Anbieter","Servicebeschreibung","Format","Zeitraum","Dauer","Preis (mit Förderanteil)","Ort","Trainer1","Trainer2","Abschluss","Anmeldung","Leistungen und Mehrwerte","Zielgruppe und Voraussetzungen","Vorschlag für drei weitere Marktplatzservices","Sektor(en)","Technologie(n)","Kostenschätzung (Aufwand je Service/Kunde)","KI-Level","Kostenschätzung (pro Kunde)"];
 
 // Zuordnung von Fragen zu Excel-Spalten
 const mapping: Record<string, string> = {
-  question1: "Zusatz-Service-Kategorie",
-  question2: "Zusatz-KI-Level",
-  question3: "Name",
-  question4: "Hauptanbieter",
-  question5: "Weitere Anbieter",
-  question6: "Kontakt-Name",
-  question7: "Sektor(en)",
-  question8: "Technologien",
-  question9: "Kostenschätzung (je Service/Kunde)",
-  question10: "Preisindikation SME",
-  question11: "Leistungen+Mehrwerte",
-  question12: "Zeitliche/örtliche Daten",
-  question13: "Zielgruppe+Voraussetzungen",
-  question14: "Buchung",
-  questionZ1: "Zusatz-Format",
-  questionZ2: "Zusatz-Abschluss",
-  questionZ3: "Zusatz-AllgemeineBeschreibung",
-  questionZ4: "Zusatz-Zeitraum",
-  questionZ5: "Zusatz-Dauer",
-  questionZ6: "Zusatz-Ort"
+  question1: "Servicename",
+  question2: "Hauptanbieter",
+  question3: "Weitere Anbieter",
+  question4: "Trainer1",
+  question5: "Servicebereich",
+  question6: "KI-Level",
+  question7: "Format",
+  question8: "Zeitraum",
+  question9: "Dauer",
+  question10: "Kostenschätzung (pro Kunde)",
+  question11: "Preis (mit Förderanteil)",
+  question12: "Ort",
+  question13: "Abschluss",
+  question14: "Anmeldung",
+  question15: "Sektor(en)",
+  question16: "Technologie(n)",
+  question17: "Servicebeschreibung",
+  question18: "Leistungen und Mehrwerte",
+  question19: "Zielgruppe und Voraussetzungen",
+  question20: "Vorschlag für drei weitere Marktplatzservices"
 };
 
 // Hilfsfunktion für Excel-konforme Formatierung
