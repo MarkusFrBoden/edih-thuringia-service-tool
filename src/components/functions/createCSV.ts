@@ -7,7 +7,7 @@ const template_Id_EDIH = import.meta.env.VITE_TEMPLATE_ID_EDIH;
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
 // Reihenfolge der Spalten in der Excel-Datei
-const excelColumns = ["ServiceID","Servicebereich","Servicename","Hauptanbieter","Weitere Anbieter","Servicebeschreibung","Format","Zeitraum","Dauer","Preis (mit Förderanteil)","Ort","Trainer1","Trainer2","Abschluss","Anmeldung","Leistungen und Mehrwerte","Zielgruppe und Voraussetzungen","Vorschlag für drei weitere Marktplatzservices","Sektor(en)","Technologie(n)","Kostenschätzung (Aufwand je Service/Kunde)","KI-Level","Kostenschätzung (pro Kunde)"];
+const excelColumns = ["ServiceID","Servicebereich","Servicename","Hauptanbieter","Weitere Anbieter","Servicebeschreibung","Kurzbeschreibung","Format","Zeitraum","Dauer","Preis (mit Förderanteil)","Ort","Trainer1","Trainer2","Abschluss","Anmeldung","Leistungen und Mehrwerte","Zielgruppe und Voraussetzungen","Service-Bild","Moodle-Link","Vorschlag für drei weitere Marktplatzservices","Sektor(en)","Technologie(n)","KI-Level","Kostenschätzung (pro Kunde)"];
 
 // Zuordnung von Fragen zu Excel-Spalten
 const mapping: Record<string, string> = {
@@ -28,9 +28,10 @@ const mapping: Record<string, string> = {
   question15: "Sektor(en)",
   question16: "Technologie(n)",
   question17: "Servicebeschreibung",
-  question18: "Leistungen und Mehrwerte",
-  question19: "Zielgruppe und Voraussetzungen",
-  question20: "Vorschlag für drei weitere Marktplatzservices"
+  question18: "Kurzbeschreibung",
+  question19: "Leistungen und Mehrwerte",
+  question20: "Zielgruppe und Voraussetzungen",
+  question21: "Vorschlag für drei weitere Marktplatzservices"
 };
 
 // Hilfsfunktion für Excel-konforme Formatierung
@@ -40,7 +41,7 @@ function escapeCSV(value: any): string {
   let str = Array.isArray(value) ? value.join(", ") : String(value);
 
   // Punkt durch # ersetzen
-  str = str.replace(/\./g, "#");
+  //str = str.replace(/\./g, "#");
 
   // Zeilenumbrüche für Excel
   str = str.replace(/\r?\n/g, "\r\n");
@@ -53,11 +54,31 @@ function escapeCSV(value: any): string {
 }
 
 // CSV-Inhalt generieren
-function generateCSV(answers: Record<string, any>): string {
+/*function generateCSV(answers: Record<string, any>): string {
   const header = excelColumns.join(";");
   const row = excelColumns.map(col => {
     const questionKey = Object.keys(mapping).find(key => mapping[key] === col);
     const value = questionKey ? answers[questionKey] : "";
+    return escapeCSV(value);
+  }).join(";");
+
+  return header + "\r\n" + row + "\r\n";
+}*/
+function generateCSV(answers: Record<string, any>): string {
+  const header = excelColumns.join(";");
+
+  const row = excelColumns.map(col => {
+    const questionKey = Object.keys(mapping).find(key => mapping[key] === col);
+
+    if (!questionKey) return "";
+
+    // Spezialfall für Frage 2 und Frage 3: Wenn {questionX}-Comment existiert und nicht leer, dann Kommentar verwenden
+    if ((questionKey === "question2" || questionKey === "question3") && answers[`${questionKey}-Comment`]) {
+      return escapeCSV(answers[`${questionKey}-Comment`]);
+    }
+
+    // Standardfall: Wert aus answers nehmen
+    const value = answers[questionKey];
     return escapeCSV(value);
   }).join(";");
 
@@ -80,8 +101,8 @@ export function createCSV(Answers: Ref<any>) {
   const templateParams = {
     KPI_reporting: csv,
     results: base64CSV,
-    servicekategorie: Answers.value.question1,
-    servicelevel: Answers.value.question2,
+    servicekategorie: Answers.value.question5,
+    servicelevel: Answers.value.question6,
     filename: filename
   };
 

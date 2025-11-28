@@ -29,6 +29,7 @@ const emit = defineEmits<{
 }>()
 const sendResults = () => {
   const answers = survey.data;
+  console.log(answers)
   emit('surveyCompleted', answers);
 };
 

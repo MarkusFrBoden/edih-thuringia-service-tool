@@ -1,7 +1,7 @@
 export const ServiceQuestions = {
   "title": "Einreichen eines neuen Services",
   "description": "Wenn du einen neuen Service auf dem Marktplatz des EDIH Thuringia anlegen möchtest, bist du hier genau richtig. Fülle dazu einfach die entsprechenden Felder aus. Das Koordinationsteam kümmert sich anschließend um die weitere Verwaltung. Du erhältst eine E-Mail, sobald der Service mit den von dir angegebenen Informationen angelegt wurde. Anschließend kannst du den Service selbstständig ausgestalten und final für Kunden sichtbar machen.",
-  
+
   "completedHtml": {
     "de": "<h3>Vielen Dank für das Zusenden des neuen Services!</h3>",
     "en": "<h3>Thank you for sending in the new service</h3>"
@@ -13,7 +13,7 @@ export const ServiceQuestions = {
         {
           "type": "html",
           "name": "question0",
-          "html":"<h4>Wichtige Information vor dem Ausfüllen des Servicetools</h4><br><p>Die eingegebenen Informationen werden beim Schließen oder Neuladen des Browsers nicht gespeichert. Plane deshalb zunächst intern den neuen Service vor, bevor du dieses Tool verwendest.</p><p>Für ein Beispiel mit zu füllenden Feldern, nutze die folgende Datei als Vorlage. Beim Ausfüllen des Servicetools sind insbesondere die Infobox unter dem Bild, die allgemeine Servicebeschreibung und die Servicedetails von Bedeutung:</p> <a href='public/Beispielservice_BIM-LateNight.pdf' download>📄 Beispielservice 'BIM Late Night' herunterladen (PDF)</a>"
+          "html": "<h4>Wichtige Information vor dem Ausfüllen des Servicetools</h4><br><p>Die eingegebenen Informationen werden beim Schließen oder Neuladen des Browsers nicht gespeichert. Plane deshalb zunächst intern den neuen Service vor, bevor du dieses Tool verwendest.</p><p>Für ein Beispiel mit zu füllenden Feldern, nutze die folgende Datei als Vorlage. Beim Ausfüllen des Servicetools sind insbesondere die Infobox unter dem Bild, die allgemeine Servicebeschreibung und die Servicedetails von Bedeutung:</p> <a href='public/Beispielservice_BIM-LateNight.pdf' download>📄 Marktplatzansicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a><br><a href='public/Flyer_BIM-LateNight.pdf' download>📄 Flyeransicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a>"
         }
       ]
     },
@@ -65,7 +65,8 @@ export const ServiceQuestions = {
         {
           "type": "comment",
           "name": "question4",
-          "title": "Ansprechpartner (Vor- & Nachname | Email-Adresse | opt. Telefon | opt. Rolle in Organisation) - auch zwei möglich",
+          "title": "Ansprechpartner - auch zwei möglich",
+          "description": "Vor- & Nachname | Email-Adresse | opt. Telefon | opt. Rolle in Organisation. Sollten die Ansprechpartner des Services von dir als Serviceersteller abweichen, dann ergänze bitte deine E-Mail-Adresse für die Bestätigung des neuen Services.",
           "isRequired": true
         },
         {
@@ -107,20 +108,11 @@ export const ServiceQuestions = {
           ], "isRequired": true
         },
         {
-          "type": "dropdown",
+          "type": "text",
           "name": "question7",
           "title": "Serviceformat",
-
-          "choices": [
-            "Workshopreihe",
-            "Weiterbildung",
-            "Einzelworkshop",
-            "Beratung",
-            "Test before invest",
-            "Live-Demonstration"
-          ],
-          "isRequired": true,
-          "showOtherItem": true,
+          "description": "Beispielsweise Workshopreihe, Weiterbildung, Beratung, Live-Demonstration oder ähnliches.",
+          "isRequired": true
         },
         {
           "type": "text",
@@ -160,16 +152,11 @@ export const ServiceQuestions = {
           "isRequired": true
         },
         {
-          "type": "dropdown",
+          "type": "text",
           "name": "question13",
           "title": "Serviceabschluss",
-          "choices": [
-            "Zertifikat",
-            "Teilnahmebestätigung",
-            "Auszeichnung"
-          ],
-          "isRequired": true,
-          "showOtherItem": true,
+          "description": "Beispielsweise Zertifikat, Teilnahmebestätigung, Auszeichnung, oder Wissen & Vernetzung",
+          "isRequired": true
         },
         {
           "type": "text",
@@ -185,49 +172,49 @@ export const ServiceQuestions = {
           "isRequired": true,
           "description": "Auswahl der wichtigsten betroffenen Sektoren nach EU-Definition.",
           "choices": [
-            "Luftfahrt",
-            "Agrarbiotechnologie und Lebensmittelbiotechnologie",
-            "Automobilindustrie",
-            "Gemeinschaftsgeführte lokale Entwicklung",
-            "Bau & Montage",
-            "Konsumgüter",
-            "Kultur- und Kreativwirtschaft",
-            "Verteidigung",
-            "Bildung",
-            "Elektrizität",
-            "Energie",
-            "Energie, Kraftstoffe und Erdöltechnik",
-            "Umwelt",
-            "Finanzwesen",
-            "Fischerei",
-            "Lebensmittel und Getränke",
-            "Gesundheitswesen",
-            "Lederindustrie",
-            "Rechtliche Aspekte",
-            "Lebenswissenschaften",
-            "Fertigung und Verarbeitung",
-            "Maritime Industrie",
-            "Metallverarbeitung und industrielle Produktion",
-            "Bergbau und Rohstoffgewinnung",
-            "NMP – Nichtmetallische Materialien & grundlegende Prozesse",
-            "Nukleartechnologie",
-            "Papier- und Holzindustrie",
-            "Persönliche Dienstleistungen",
-            "Polymere und Kunststoffe",
-            "Öffentliche Verwaltung",
-            "Immobilien",
-            "Regulierung",
-            "Einzelhandel, Großhandel oder Vertrieb",
-            "Sicherheit",
-            "Smarte Städte (Smart City)",
-            "Raumfahrt",
-            "Telekommunikation",
-            "Textilien",
-            "Tabakindustrie",
-            "Transport & Mobilität",
-            "Verkehrssektor",
-            "Reisen und Tourismus",
-            "Sektorübergreifend"
+            "Aeronautics",
+            "Agricultural biotechnology and food biotechnology",
+            "Automotive",
+            "Community-Led Local Development",
+            "Construction & Assembly",
+            "Consumer products",
+            "Cultural and creative economy",
+            "Defence",
+            "Education",
+            "Electricity",
+            "Energy",
+            "Energy, fuels and petroleum engineering",
+            "Environment",
+            "Financial",
+            "Fishery",
+            "Food and beverages",
+            "Health care",
+            "Leather",
+            "Legal Aspects",
+            "Life sciences",
+            "Manufacturing and processing",
+            "Maritime",
+            "Metal working and industrial production",
+            "Mining and extraction",
+            "NMP Non-Metallic Materials & basic processes",
+            "Nuclear",
+            "Paper and wood",
+            "Personal services",
+            "Polymers and plastics",
+            "Public administration",
+            "Real estate",
+            "Regulation",
+            "Retail, wholesale or distribution",
+            "Security",
+            "Smart City",
+            "Space",
+            "Telecommunications",
+            "Textiles",
+            "Tobacco",
+            "Transport & Mobility",
+            "Transport sector",
+            "Travel and tourism",
+            "All sectors"
           ]
         },
         {
@@ -237,43 +224,43 @@ export const ServiceQuestions = {
           "isRequired": true,
           "description": "Auswahl der wichtigsten genutzen Technologien nach EU-Definition.",
           "choices": [
-            "Additive Fertigung",
-            "Künstliche Intelligenz & Entscheidungsunterstützung",
-            "BI-Tools (Business Intelligence)",
-            "Big Data",
-            "Blockchain und Distributed-Ledger-Technologie (DLT)",
-            "Chemieingenieurwesen (Anlagen, Produkte)",
-            "Cloud-Dienste",
-            "Kommunikationsnetzwerke",
-            "Cyber-physische Systeme",
-            "Cybersicherheit",
-            "Digitale Zwillinge",
+            "Additive manufacturing",
+            "Artificial Intelligence & Decision support",
+            "BI tools",
+            "Big data",
+            "Blockchain and Distributed Ledger Technology (DLT)",
+            "Chemical engineering (plants, products)",
+            "Cloud Services",
+            "Communication network",
+            "Cyber-physical systems",
+            "Cybersecurity",
+            "Digital twins",
             "Displays",
             "Gamification",
-            "Hochleistungsrechnen",
-            "Mensch-Computer-Interaktion",
-            "Industrielle Biotechnologie",
-            "Internet der Dinge",
-            "Internetdienste & -anwendungen",
-            "Laserbasierte Fertigung und Materialbearbeitung",
-            "Standortbezogene Anwendungen",
-            "Logistik",
-            "Mikro- und Nanoelektronik, Optoelektronik",
-            "Mobilität",
-            "Neue Technologien für den audiovisuellen Sektor – Medien",
-            "Organische und großflächige Elektronik",
-            "Sonstiges (bitte angeben)",
-            "Photonik",
-            "Quantentechnologien (Rechnen/Kommunikation)",
-            "Robotik",
-            "Halbleiter und Nanotechnologie",
-            "Sensoren & Systeme zur Bildverarbeitung",
-            "Simulationsingenieurwesen und Modellierung",
-            "Softwarearchitekturen",
-            "Virtuelle Realität"
+            "High performance computing",
+            "Human computer interaction",
+            "Industrial biotechnology",
+            "Internet of Things",
+            "Internet Services & Applications",
+            "Laser-based manufacturing and materials processing",
+            "Location-based applications",
+            "Logistics",
+            "Micro- and nanoelectronics, optoelectronics",
+            "Mobility",
+            "New technologies for Audio-Visual sector - Media",
+            "Organic and large area electronics",
+            "Other (please specify)",
+            "Photonics",
+            "Quantum Technologies (computing/communication)",
+            "Robotics",
+            "Semiconductors and Nanotechnology",
+            "Sensors & Vision Processing Systems",
+            "Simulation engineering and modelling",
+            "Software Architectures",
+            "Virtual Reality",
+            "All sectors"
           ]
         }
-
       ]
     },
     {
@@ -284,27 +271,34 @@ export const ServiceQuestions = {
         {
           "type": "comment",
           "name": "question17",
-          "title": "Allgemeine Servicebeschreibung",
-          "description": "Möglichst ansprechende Beschreibung des Serviceinhaltes in 5-10 Sätzen als Einführung für die Kunden.",
+          "title": "Allgemeine Servicebeschreibung für den Marktplatz",
+          "description": "Möglichst ansprechende Beschreibung des Serviceinhaltes in 5-10 Sätzen als Einführung für die Kunden (siehe Servicebeispiel).",
           "isRequired": true
         },
         {
           "type": "comment",
           "name": "question18",
+          "title": "Kurzbeschreibung für den Service-Steckbrief",
+          "description": "Möglichst Beschreibung des Serviceinhaltes in 2-3 Sätzen (siehe Flyer-Beispiel).",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "question19",
           "title": "Leistungen und Mehrwerte",
           "description": "Aufzählung der konkreten Lerninhalte in 3-5 Stichpunkten.",
           "isRequired": true
         },
         {
           "type": "comment",
-          "name": "question19",
+          "name": "question20",
           "title": "Zielgruppe und Voraussetzungen ",
           "description": "Aufzählung der konkreten Zielgruppe und Teilnahmevorraussetzungen in 3-5 Stichpunkten.",
           "isRequired": true
         },
         {
           "type": "comment",
-          "name": "question20",
+          "name": "question21",
           "title": "Vorschlag für drei weitere Marktplatzservices.",
           "description": "Kopieren und Einfügen von Links drei weiterer Services des EDIH Thuringia Marktplatzes für die Kachel 'Weitere Services'.",
           "isRequired": true
