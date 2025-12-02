@@ -13,7 +13,7 @@ export const ServiceQuestions = {
         {
           "type": "html",
           "name": "question0",
-          "html": "<h4>Wichtige Information vor dem Ausfüllen des Servicetools</h4><br><p>Die eingegebenen Informationen werden beim Schließen oder Neuladen des Browsers nicht gespeichert. Plane deshalb zunächst intern den neuen Service vor, bevor du dieses Tool verwendest.</p><p>Für ein Beispiel mit zu füllenden Feldern, nutze die folgende Datei als Vorlage. Beim Ausfüllen des Servicetools sind insbesondere die Infobox unter dem Bild, die allgemeine Servicebeschreibung und die Servicedetails von Bedeutung:</p> <a href='public/Beispielservice_BIM-LateNight.pdf' download>📄 Marktplatzansicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a><br><a href='public/Flyer_BIM-LateNight.pdf' download>📄 Flyeransicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a>"
+          "html": "<h4>Wichtige Information vor dem Ausfüllen des Servicetools</h4><br><p>Die eingegebenen Informationen werden beim Schließen oder Neuladen des Browsers nicht gespeichert. Plane deshalb zunächst intern den neuen Service vor, bevor du dieses Tool verwendest.</p><p>Für ein Beispiel mit zu füllenden Feldern, nutze die folgende Datei als Vorlage. Beim Ausfüllen des Servicetools sind insbesondere die Infobox unter dem Bild, die allgemeine Servicebeschreibung und die Servicedetails von Bedeutung:</p> <a href='public/Beispielservice_BIM-LateNight.pdf' download>📄 Marktplatzansicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a><br><a href='public/Beispielservice_BIM-LateNight-Flyer.pdf' download>📄 Flyeransicht für Beispielservice 'BIM Late Night' herunterladen (PDF)</a>"
         }
       ]
     },
