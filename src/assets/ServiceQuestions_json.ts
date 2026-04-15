@@ -36,14 +36,17 @@ export const ServiceQuestions = {
           "isRequired": true,
           "showOtherItem": true,
           "choices": [
-            "BMO",
-            "BPV",
-            "HIGHQ",
-            "NTAG",
-            "THIMO",
-            "TZLR",
-            "WBA",
-            "WLA"
+            "Bauhaus.Mobility",
+            "BPV Consult GmbH",
+            "highQ Computerlösungen GmbH",
+            "IAB – Institut für Angewandte Bauforschung Weimar gGmbH",
+            "NT Neue Technologie AG",
+            "pwp-systems GmbH",
+            "Thüringer Innovationszentrum Mobilität (ThIMo)",
+            "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)",
+            "Ubilabs GmbH",
+            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V.",
+            "EDIH MID GERMANY"
           ]
         },
         {
@@ -52,14 +55,17 @@ export const ServiceQuestions = {
           "title": "weitere Anbieter",
           "showOtherItem": true,
           "choices": [
-            "BMO",
-            "BPV",
-            "HIGHQ",
-            "NTAG",
-            "THIMO",
-            "TZLR",
-            "WBA",
-            "WLA"
+            "Bauhaus.Mobility",
+            "BPV Consult GmbH",
+            "highQ Computerlösungen GmbH",
+            "IAB – Institut für Angewandte Bauforschung Weimar gGmbH",
+            "NT Neue Technologie AG",
+            "pwp-systems GmbH",
+            "Thüringer Innovationszentrum Mobilität (ThIMo)",
+            "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)",
+            "Ubilabs GmbH",
+            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V.",
+            "EDIH MID GERMANY"
           ]
         },
         {
