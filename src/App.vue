@@ -5,10 +5,10 @@
 
         <div id="img" class="col1 d-flex justify-content-left">
           <div v-if="!darkmode">
-            <img src="./assets/EDIH-Th_Landscape_darkblue.png" alt="EDIH Thuringia">
+            <img src="./assets/EDIH-MID_web__Landscape outline — deep blue.png" alt="EDIH MID GERMANY">
           </div>
           <div v-else>
-            <img src="./assets/EDIH-Th_Landscape_white.png" alt="EDIH Thuringia">
+            <img src="./assets/EDIH-MID_web__Landscape outline — white.png" alt="EDIH MID GERMANY">
           </div>
         </div>
 

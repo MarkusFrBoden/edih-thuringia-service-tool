@@ -1,5 +1,6 @@
 import { type Ref } from "vue";
 import emailjs from "@emailjs/browser";
+import { buildServiceJSON } from "./createJSON";
 
 // Konfiguration aus Umgebungsvariablen
 const service_Id_EDIH = import.meta.env.VITE_SERVICE_ID_EDIH;
@@ -14,7 +15,6 @@ const mapping: Record<string, string> = {
   question1: "Servicename",
   question2: "Hauptanbieter",
   question3: "Weitere Anbieter",
-  question4: "Trainer1",
   question5: "Servicebereich",
   question6: "KI-Level",
   question7: "Format",
@@ -29,8 +29,6 @@ const mapping: Record<string, string> = {
   question16: "Technologie(n)",
   question17: "Servicebeschreibung",
   question18: "Kurzbeschreibung",
-  question19: "Leistungen und Mehrwerte",
-  question20: "Zielgruppe und Voraussetzungen",
   question21: "Vorschlag für drei weitere Marktplatzservices"
 };
 
@@ -39,9 +37,6 @@ function escapeCSV(value: any): string {
   if (value === null || value === undefined) return "";
 
   let str = Array.isArray(value) ? value.join(", ") : String(value);
-
-  // Punkt durch # ersetzen
-  //str = str.replace(/\./g, "#");
 
   // Zeilenumbrüche für Excel
   str = str.replace(/\r?\n/g, "\r\n");
@@ -53,23 +48,37 @@ function escapeCSV(value: any): string {
   return needsQuotes ? `"${escaped}"` : escaped;
 }
 
-// CSV-Inhalt generieren
-/*function generateCSV(answers: Record<string, any>): string {
-  const header = excelColumns.join(";");
-  const row = excelColumns.map(col => {
-    const questionKey = Object.keys(mapping).find(key => mapping[key] === col);
-    const value = questionKey ? answers[questionKey] : "";
-    return escapeCSV(value);
-  }).join(";");
+// Trainer-Felder zu CSV-konformem String "Name | Email | Telefon | Rolle"
+function trainerToString(answers: Record<string, any>, prefix: "trainer1" | "trainer2"): string {
+  if (prefix === "trainer2" && answers.trainer2_aktiv !== true) return "";
+  const name = answers[`${prefix}_name`] ?? "";
+  const email = answers[`${prefix}_email`] ?? "";
+  const telefon = answers[`${prefix}_telefon`] ?? "";
+  const rolle = answers[`${prefix}_rolle`] ?? "";
+  if (!name && !email && !telefon && !rolle) return "";
+  return [name, email, telefon, rolle].map((v) => String(v).trim()).join(" | ");
+}
 
-  return header + "\r\n" + row + "\r\n";
-}*/
+// paneldynamic-Antworten ([{punkt: "..."}, ...]) zu Newline-getrennten Stichpunkten
+function panelDynamicToCsvCell(value: any): string {
+  if (!Array.isArray(value)) return value ?? "";
+  return value
+    .map((entry) => String(entry?.punkt ?? "").trim())
+    .filter((p) => p.length > 0)
+    .join("\n");
+}
+
+// CSV-Inhalt generieren
 function generateCSV(answers: Record<string, any>): string {
   const header = excelColumns.join(";");
 
-  const row = excelColumns.map(col => {
-    const questionKey = Object.keys(mapping).find(key => mapping[key] === col);
+  const row = excelColumns.map((col) => {
+    if (col === "Trainer1") return escapeCSV(trainerToString(answers, "trainer1"));
+    if (col === "Trainer2") return escapeCSV(trainerToString(answers, "trainer2"));
+    if (col === "Leistungen und Mehrwerte") return escapeCSV(panelDynamicToCsvCell(answers.question19));
+    if (col === "Zielgruppe und Voraussetzungen") return escapeCSV(panelDynamicToCsvCell(answers.question20));
 
+    const questionKey = Object.keys(mapping).find((key) => mapping[key] === col);
     if (!questionKey) return "";
 
     // Spezialfall für Frage 2 und Frage 3: Wenn {questionX}-Comment existiert und nicht leer, dann Kommentar verwenden
@@ -77,9 +86,7 @@ function generateCSV(answers: Record<string, any>): string {
       return escapeCSV(answers[`${questionKey}-Comment`]);
     }
 
-    // Standardfall: Wert aus answers nehmen
-    const value = answers[questionKey];
-    return escapeCSV(value);
+    return escapeCSV(answers[questionKey]);
   }).join(";");
 
   return header + "\r\n" + row + "\r\n";
@@ -90,20 +97,27 @@ function utf8ToBase64(str: string): string {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
-// Hauptfunktion: CSV erzeugen und per Email senden
+// Hauptfunktion: CSV + JSON erzeugen und per Email senden
 export function createCSV(Answers: Ref<any>) {
-  const csv = "\uFEFF" + generateCSV(Answers.value);  // BOM hinzufügen
-  const base64CSV = utf8ToBase64(csv);               // sauberer base64 mit UTF-8
+  const csv = "﻿" + generateCSV(Answers.value);  // BOM hinzufügen
+  const base64CSV = utf8ToBase64(csv);
+
+  const json = buildServiceJSON(Answers.value);
+  const base64JSON = utf8ToBase64(json);
 
   const now = new Date();
-  const filename = `ServiceUpload_${now.toISOString().slice(0, 10)}.csv`;
+  const datestamp = now.toISOString().slice(0, 10);
+  const filename = `ServiceUpload_${datestamp}.csv`;
+  const filenameJSON = `ServiceUpload_${datestamp}.json`;
 
   const templateParams = {
     KPI_reporting: csv,
     results: base64CSV,
     servicekategorie: Answers.value.question5,
     servicelevel: Answers.value.question6,
-    filename: filename
+    filename: filename,
+    results_json: base64JSON,
+    filename_json: filenameJSON,
   };
 
   emailjs.send(service_Id_EDIH, template_Id_EDIH, templateParams, { publicKey })

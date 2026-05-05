@@ -1,6 +1,6 @@
 export const ServiceQuestions = {
   "title": "Einreichen eines neuen Services",
-  "description": "Wenn du einen neuen Service auf dem Marktplatz des EDIH Thuringia anlegen möchtest, bist du hier genau richtig. Fülle dazu einfach die entsprechenden Felder aus. Das Koordinationsteam kümmert sich anschließend um die weitere Verwaltung. Du erhältst eine E-Mail, sobald der Service mit den von dir angegebenen Informationen angelegt wurde. Anschließend kannst du den Service selbstständig ausgestalten und final für Kunden sichtbar machen.",
+  "description": "Wenn du einen neuen Service auf dem Marktplatz des EDIH MID GERMANY anlegen möchtest, bist du hier genau richtig. Fülle dazu einfach die entsprechenden Felder aus. Das Koordinationsteam kümmert sich anschließend um die weitere Verwaltung. Du erhältst eine E-Mail, sobald der Service mit den von dir angegebenen Informationen angelegt wurde. Anschließend kannst du den Service selbstständig ausgestalten und final für Kunden sichtbar machen.",
 
   "completedHtml": {
     "de": "<h3>Vielen Dank für das Zusenden des neuen Services!</h3>",
@@ -45,8 +45,7 @@ export const ServiceQuestions = {
             "Thüringer Innovationszentrum Mobilität (ThIMo)",
             "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)",
             "Ubilabs GmbH",
-            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V.",
-            "EDIH MID GERMANY"
+            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V."
           ]
         },
         {
@@ -64,22 +63,79 @@ export const ServiceQuestions = {
             "Thüringer Innovationszentrum Mobilität (ThIMo)",
             "Thüringer Zentrum für Lernende Systeme und Robotik (TZLR)",
             "Ubilabs GmbH",
-            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V.",
-            "EDIH MID GERMANY"
+            "WBA | Bauhaus Weiterbildungsakademie Weimar e.V."
           ]
         },
         {
-          "type": "comment",
+          "type": "panel",
           "name": "question4",
-          "title": "Ansprechpartner - auch zwei möglich",
-          "description": "Vor- & Nachname | Email-Adresse | opt. Telefon | opt. Rolle in Organisation. Sollten die Ansprechpartner des Services von dir als Serviceersteller abweichen, dann ergänze bitte deine E-Mail-Adresse für die Bestätigung des neuen Services.",
-          "isRequired": true
+          "title": "Ansprechpartner",
+          "description": "Bitte gib mindestens einen Trainer/Ansprechpartner an. Ein zweiter Trainer ist optional. Sollten die Ansprechpartner des Services von dir als Serviceersteller abweichen, dann ergänze bitte deine E-Mail-Adresse für die Bestätigung des neuen Services.",
+          "elements": [
+            {
+              "type": "text",
+              "name": "trainer1_name",
+              "title": "Trainer 1 – Vor- & Nachname",
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "trainer1_email",
+              "title": "Trainer 1 – E-Mail",
+              "inputType": "email",
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "trainer1_telefon",
+              "title": "Trainer 1 – Telefon (optional)"
+            },
+            {
+              "type": "text",
+              "name": "trainer1_rolle",
+              "title": "Trainer 1 – Rolle (optional)"
+            },
+            {
+              "type": "boolean",
+              "name": "trainer2_aktiv",
+              "title": "Zweiten Trainer hinzufügen?",
+              "renderAs": "checkbox",
+              "defaultValue": false
+            },
+            {
+              "type": "text",
+              "name": "trainer2_name",
+              "title": "Trainer 2 – Vor- & Nachname",
+              "visibleIf": "{trainer2_aktiv} = true",
+              "requiredIf": "{trainer2_aktiv} = true"
+            },
+            {
+              "type": "text",
+              "name": "trainer2_email",
+              "title": "Trainer 2 – E-Mail",
+              "inputType": "email",
+              "visibleIf": "{trainer2_aktiv} = true",
+              "requiredIf": "{trainer2_aktiv} = true"
+            },
+            {
+              "type": "text",
+              "name": "trainer2_telefon",
+              "title": "Trainer 2 – Telefon (optional)",
+              "visibleIf": "{trainer2_aktiv} = true"
+            },
+            {
+              "type": "text",
+              "name": "trainer2_rolle",
+              "title": "Trainer 2 – Rolle (optional)",
+              "visibleIf": "{trainer2_aktiv} = true"
+            }
+          ]
         },
         {
           "type": "dropdown",
           "name": "question5",
           "title": "Service-Kategorie",
-          "description": "Für die Einordnung nach Service-Kategorien auf dem EDIH Thuringia Marktplatz.",
+          "description": "Für die Einordnung nach Service-Kategorien auf dem EDIH MID GERMANY Marktplatz.",
           "isRequired": true,
           "choices": [
             {
@@ -100,7 +156,7 @@ export const ServiceQuestions = {
           "type": "dropdown",
           "name": "question6",
           "title": "KI-Level",
-          "description": "Für die zukünftige Einordnung nach KI-Leveln auf dem EDIH Thuringia Marktplatz (Readiness = Grundlegende Digitalisierung, welche die Grundlagen für KI bildet | Application = Nutzung von KI-Anwendungen im Rahmen des Services | Innovation = Forschung & Entwicklung neuer Anwendungen auf Basis von KI)",
+          "description": "Für die zukünftige Einordnung nach KI-Leveln auf dem EDIH MID GERMANY Marktplatz (Readiness = Grundlegende Digitalisierung, welche die Grundlagen für KI bildet | Application = Nutzung von KI-Anwendungen im Rahmen des Services | Innovation = Forschung & Entwicklung neuer Anwendungen auf Basis von KI)",
           "choices": [
             {
               "value": "KI-Readiness"
@@ -289,24 +345,48 @@ export const ServiceQuestions = {
           "isRequired": true
         },
         {
-          "type": "comment",
+          "type": "paneldynamic",
           "name": "question19",
           "title": "Leistungen und Mehrwerte",
-          "description": "Aufzählung der konkreten Lerninhalte in 3-5 Stichpunkten.",
-          "isRequired": true
+          "description": "Trage 3–5 Stichpunkte als Liste ein.",
+          "isRequired": true,
+          "minPanelCount": 3,
+          "maxPanelCount": 8,
+          "panelAddText": "Punkt hinzufügen",
+          "panelRemoveText": "Punkt entfernen",
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "punkt",
+              "title": "Stichpunkt",
+              "isRequired": true
+            }
+          ]
         },
         {
-          "type": "comment",
+          "type": "paneldynamic",
           "name": "question20",
-          "title": "Zielgruppe und Voraussetzungen ",
-          "description": "Aufzählung der konkreten Zielgruppe und Teilnahmevorraussetzungen in 3-5 Stichpunkten.",
-          "isRequired": true
+          "title": "Zielgruppe und Voraussetzungen",
+          "description": "Trage 3–5 Stichpunkte zur Zielgruppe und zu Teilnahmevoraussetzungen als Liste ein.",
+          "isRequired": true,
+          "minPanelCount": 3,
+          "maxPanelCount": 8,
+          "panelAddText": "Punkt hinzufügen",
+          "panelRemoveText": "Punkt entfernen",
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "punkt",
+              "title": "Stichpunkt",
+              "isRequired": true
+            }
+          ]
         },
         {
           "type": "comment",
           "name": "question21",
           "title": "Vorschlag für drei weitere Marktplatzservices.",
-          "description": "Kopieren und Einfügen von Links drei weiterer Services des EDIH Thuringia Marktplatzes für die Kachel 'Weitere Services'.",
+          "description": "Kopieren und Einfügen von Links drei weiterer Services des EDIH MID GERMANY Marktplatzes für die Kachel 'Weitere Services'.",
           "isRequired": true
         },
       ]
