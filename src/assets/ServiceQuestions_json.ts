@@ -383,11 +383,31 @@ export const ServiceQuestions = {
           ]
         },
         {
-          "type": "comment",
+          "type": "paneldynamic",
           "name": "question21",
-          "title": "Vorschlag für drei weitere Marktplatzservices.",
-          "description": "Kopieren und Einfügen von Links drei weiterer Services des EDIH MID GERMANY Marktplatzes für die Kachel 'Weitere Services'.",
-          "isRequired": true
+          "title": "Vorschlag für 2–3 weitere Marktplatzservices",
+          "description": "Füge 2–3 Links zu weiteren Services des EDIH MID GERMANY Marktplatzes für die Kachel 'Weitere Services' ein. Format: https://edih.digital/course/view.php?id=<ID> (Beispiel: https://edih.digital/course/view.php?id=183).",
+          "isRequired": true,
+          "minPanelCount": 2,
+          "maxPanelCount": 3,
+          "panelAddText": "Link hinzufügen",
+          "panelRemoveText": "Link entfernen",
+          "templateElements": [
+            {
+              "type": "text",
+              "name": "link",
+              "title": "Marktplatz-Link",
+              "inputType": "url",
+              "isRequired": true,
+              "validators": [
+                {
+                  "type": "regex",
+                  "regex": "^https://edih\\.digital/course/view\\.php\\?id=\\d+$",
+                  "text": "Bitte einen gültigen Marktplatz-Link im Format https://edih.digital/course/view.php?id=<ID> einfügen."
+                }
+              ]
+            }
+          ]
         },
       ]
     }

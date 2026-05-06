@@ -25,6 +25,16 @@ function panelDynamicToHtmlList(value: any): string {
   return items ? `<ul>${items}</ul>` : "";
 }
 
+function coursecardsContainer(value: any): string {
+  if (!Array.isArray(value)) return "";
+  return value
+    .map((entry) => String(entry?.link ?? "").trim())
+    .map((url) => url.match(/[?&]id=(\d+)/)?.[1])
+    .filter((id): id is string => !!id)
+    .map((id) => `  <div style="width: 220px;">{coursecard ${id}}</div>`)
+    .join("\n");
+}
+
 function dropdownValue(answers: Record<string, any>, key: string): string {
   const comment = answers[`${key}-Comment`];
   if (comment !== undefined && comment !== null && String(comment).trim() !== "") {
@@ -91,6 +101,7 @@ export function buildServiceJSON(answers: Record<string, any>): string {
     kostenschaetzung: answers.question10 === undefined || answers.question10 === null ? "" : String(answers.question10),
     status: "",
     servicenummer_kategorie_praefix: praefix,
+    coursecards_container: coursecardsContainer(answers.question21),
   };
 
   return JSON.stringify({ platzhalter }, null, 2);

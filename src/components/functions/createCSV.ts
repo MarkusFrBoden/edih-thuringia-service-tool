@@ -28,8 +28,7 @@ const mapping: Record<string, string> = {
   question15: "Sektor(en)",
   question16: "Technologie(n)",
   question17: "Servicebeschreibung",
-  question18: "Kurzbeschreibung",
-  question21: "Vorschlag für drei weitere Marktplatzservices"
+  question18: "Kurzbeschreibung"
 };
 
 // Hilfsfunktion für Excel-konforme Formatierung
@@ -59,11 +58,11 @@ function trainerToString(answers: Record<string, any>, prefix: "trainer1" | "tra
   return [name, email, telefon, rolle].map((v) => String(v).trim()).join(" | ");
 }
 
-// paneldynamic-Antworten ([{punkt: "..."}, ...]) zu Newline-getrennten Stichpunkten
-function panelDynamicToCsvCell(value: any): string {
+// paneldynamic-Antworten ([{<field>: "..."}, ...]) zu Newline-getrennten Stichpunkten
+function panelDynamicToCsvCell(value: any, field: string = "punkt"): string {
   if (!Array.isArray(value)) return value ?? "";
   return value
-    .map((entry) => String(entry?.punkt ?? "").trim())
+    .map((entry) => String(entry?.[field] ?? "").trim())
     .filter((p) => p.length > 0)
     .join("\n");
 }
@@ -77,6 +76,7 @@ function generateCSV(answers: Record<string, any>): string {
     if (col === "Trainer2") return escapeCSV(trainerToString(answers, "trainer2"));
     if (col === "Leistungen und Mehrwerte") return escapeCSV(panelDynamicToCsvCell(answers.question19));
     if (col === "Zielgruppe und Voraussetzungen") return escapeCSV(panelDynamicToCsvCell(answers.question20));
+    if (col === "Vorschlag für drei weitere Marktplatzservices") return escapeCSV(panelDynamicToCsvCell(answers.question21, "link"));
 
     const questionKey = Object.keys(mapping).find((key) => mapping[key] === col);
     if (!questionKey) return "";
